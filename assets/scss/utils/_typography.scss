@@ -1,0 +1,112 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  display: block;
+  font-family: 'Cartoon';
+  font-weight: normal;
+}
+
+.titleWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 20px;
+  &.ta--c {
+    justify-content: center;
+  }
+  &.ta--space {
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.title {
+  display: block;
+  position: relative;
+  line-height: 1.2;
+  &.title--h1 {
+    font-size: 83.74px;
+    line-height: 1.07;
+    .tornado {
+      font-size: 111.65px;
+    }
+    .skills {
+      font-size: 167.48px;
+    }
+    @media screen and (max-width: 1380px) {
+      font-size: 70px;
+      .tornado {
+        font-size: 90.5px;
+      }
+      .skills {
+        font-size: 138px;
+      }
+    }
+    @media screen and (max-width: 767px) {
+      font-size: 45.36px;
+      .tornado {
+        font-size: 60.48px;
+      }
+      .skills {
+        font-size: 90.72px;
+      }
+    }
+  }
+  &.title--h2 {
+    font-size: 48px;
+    @media screen and (max-width: 1279px) {
+      font-size: 36px;
+    }
+    @media screen and (max-width: 767px) {
+      font-size: 28px;
+    }
+  }
+  &.title--h3 {
+    font-size: 32.41px;
+    @media screen and (max-width: 767px) {
+      line-height: 30.27px;
+    }
+  }
+  &.title--h4 {
+    font-size: 40px;
+    line-height: 1;
+    @media screen and (max-width: 767px) {
+      font-size: 23px;
+    }
+  }
+  &.title--h5,
+  &.title--h6 {
+    font-size: 18px;
+    line-height: 1.2;
+  }
+  &.title--shops {
+    font-size: 64px;
+    line-height: 1;
+    @media screen and (max-width: 1279px) {
+      font-size: 46px;
+    }
+    @media screen and (max-width: 767px) {
+      font-size: 32px;
+    }
+  }
+}
+
+.subtitle {
+  width: 100%;
+}
+
+.upper {
+  text-transform: uppercase;
+}
+
+.ta--c {
+  text-align: center;
+}
+
+.rub {
+  font-family: 'San Francisco', 'Arial', 'PF-Din', sans-serif;
+  font-weight: 700;
+}

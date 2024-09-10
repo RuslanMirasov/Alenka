@@ -1,0 +1,201 @@
+.section--hero {
+  height: 100vh;
+  min-height: 678px;
+  @media screen and (max-width: 1279px) {
+    min-height: 1024px;
+  }
+  @media screen and (max-width: 767px) {
+    min-height: 667px;
+  }
+  .section-container {
+    align-content: center;
+    align-items: center;
+    padding: 0px 36px;
+    max-width: 1440px;
+    height: 100%;
+    @media screen and (max-width: 1279px) {
+      justify-content: center;
+      align-content: space-between;
+      padding: 120px 36px 40px 36px;
+    }
+    @media screen and (max-width: 767px) {
+      padding: 80px 20px 40px 20px;
+    }
+  }
+  .titleWrapper {
+    max-width: 480px;
+    @media screen and (max-width: 1380px) {
+      max-width: 400px;
+    }
+    @media screen and (max-width: 1279px) {
+      height: 100%;
+      align-content: space-between;
+    }
+    @media screen and (max-width: 767px) {
+      text-align: center;
+    }
+  }
+  .section-background {
+    picture {
+      &.bg {
+        width: 100%;
+        height: 100%;
+      }
+      &.man {
+        width: 100%;
+        bottom: 0px;
+        height: calc(100% - 100px);
+        transform: translate(7%, 0%);
+        img {
+          object-fit: contain;
+        }
+        @media screen and (max-width: 1279px) {
+          height: 58%;
+          transform: translate(-20%, 0%);
+          left: 0px;
+        }
+        @media screen and (max-width: 767px) {
+          height: 61%;
+          transform: translate(0%, 0%);
+          left: 0px;
+          img {
+            width: auto;
+          }
+        }
+      }
+    }
+    // img {
+    //   &.man {
+    //     bottom: 0px;
+    //     height: calc(100% - 100px);
+    //     transform: translate(16%, 0%);
+    //     @media screen and (max-width: 1279px) {
+    //       height: 55%;
+    //       transform: translate(5%, 0%);
+    //       left: 0px;
+    //     }
+    //   }
+    // }
+    .tornado {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      position: absolute;
+      z-index: 1;
+      bottom: 0px;
+      width: 100%;
+      height: calc(100% - 70px);
+      left: 0%;
+      transform: translate(24%, 0%);
+      picture {
+        width: 100%;
+        height: 100%;
+      }
+      .can {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+        transform: translate(0%, 0%);
+      }
+      .animation {
+        height: 84%;
+        transform: translate(1.6%, 0%);
+        bottom: 4%;
+      }
+      @media screen and (max-width: 1279px) {
+        height: 80%;
+        transform: translate(0%, -5%);
+        .can {
+          width: auto;
+          right: 0px;
+        }
+        .animation {
+          width: auto;
+          right: 0%;
+          transform: translate(26%, 0%);
+        }
+      }
+      @media screen and (max-width: 767px) {
+        height: 64%;
+        transform: translate(0%, -20%);
+        .animation {
+          width: auto;
+          right: 0%;
+          transform: translate(26%, 0%);
+        }
+      }
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      z-index: 1;
+      width: 100%;
+      height: 180px;
+      bottom: 0px;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 10%, #000000 87.81%);
+    }
+    @media screen and (max-width: 767px) {
+      &:before {
+        background: url('../img/noise.gif') repeat left top;
+        background-size: 180px auto;
+        opacity: 0.18;
+      }
+    }
+  }
+}
+
+.hero-subtitle {
+  text-align: center;
+  background-color: var(--color);
+  color: var(--black);
+  font-family: Cartoon;
+  width: 226px;
+  padding: 16.32814px 26px;
+  font-size: 24px;
+  line-height: 1.07;
+  transform: translate(114%, -50%) rotate(-5deg);
+  @media screen and (max-width: 1380px) {
+    width: 183px;
+    font-size: 18px;
+    line-height: 16.81px;
+    padding: 16.32814px 26px;
+  }
+  @media screen and (max-width: 767px) {
+    transform: translate(85%, -90%) rotate(-5deg);
+  }
+}
+
+.scrolldown {
+  display: flex;
+  flex-wrap: nowrap;
+  position: absolute;
+  left: 36px;
+  bottom: 40px;
+  width: 60px;
+  overflow: hidden;
+  &:before {
+    content: '';
+    display: block;
+    width: 100%;
+    padding-top: 305.129%;
+  }
+  img {
+    position: absolute;
+    width: 200%;
+    max-width: 200%;
+    height: 160%;
+    max-height: 160%;
+    left: -50%;
+    top: -34%;
+    pointer-events: none;
+  }
+  @media screen and (max-width: 1380px) {
+    width: 30px;
+  }
+  @media screen and (max-width: 767px) {
+    width: 20px;
+    left: 28px;
+    bottom: 100px;
+  }
+}
