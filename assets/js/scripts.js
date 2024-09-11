@@ -1,6 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('Script Started!');
-
   const refs = {
     scrollLinks: document.querySelectorAll('[data-scrollto]'),
     runTexts: document.querySelectorAll('[data-runtext]'),
