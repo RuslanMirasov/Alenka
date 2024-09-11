@@ -1,0 +1,28 @@
+@font-face {
+  font-family: 'Pragmatica regular';
+  src: url('../fonts/ok-pragmatica-regular.woff2') format('woff2'),
+    url('../fonts/ok-pragmatica-regular.woff') format('woff'),
+    url('../fonts/ok-pragmatica-regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pragmatica bold';
+  src: url('../fonts/ok-pragmatica-bold.woff2') format('woff2'),
+    url('../fonts/ok-pragmatica-bold.woff') format('woff'),
+    url('../fonts/ok-pragmatica-bold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ITC Officina Serif Std';
+  src: url('../fonts/OSR66.woff2') format('woff2'), url('../fonts/OSR66.woff') format('woff'),
+    url('../fonts/OSR66.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}

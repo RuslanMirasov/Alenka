@@ -1,30 +1,54 @@
-//Utils
-@import './utils/fonts';
-@import './utils/animations';
-@import './utils/thema';
-@import './utils/reset';
-@import './utils/typography';
+:root {
+  --color: #1fb946;
+  --biege: #f4db6c;
+  --red: #d30e14;
+  --invalid: #d30e14;
+  --blue-dark: #27007a;
+  --black: #000000;
+  --brown: #681e00;
+  --white: #ffffff;
+  --backdrop: rgba(0, 0, 0, 0.3);
+
+  --nav-link-color: #05065a;
+  --bg: #05003a;
+
+  --paragmatica: 'Pragmatica regular';
+  --paragmatica-bold: 'Pragmatica bold';
+  --serif: 'ITC Officina Serif Std';
+}
+
+//Basics
+@import './basics/fonts';
+@import './basics/animations';
+@import './basics/reset';
+@import './basics/typography';
 
 //Components
 @import './components/body';
-@import './components/header';
-@import './components/buttons';
-@import './components/footer';
 @import './components/section';
-@import './components/runText';
-@import './components/schopList';
-@import './components/winnersTable';
-@import './components/pagination';
-@import './components/accordeon';
-@import './components/list';
-@import './components/contactForm';
-@import './components/socials';
+@import './components/header';
+@import './components/footer';
+@import './components/buttons';
+@import './components/modal';
+@import './components/form';
 
 //Sections
 @import './sections/hero';
-@import './sections/steps';
-@import './sections/promo';
-@import './sections/products';
-@import './sections/shops';
-@import './sections/winners';
-@import './sections/faq';
+
+// @media screen and (max-width: 767px) {
+//   padding: 0px 20px;
+//   max-width: 480px;
+// }
+// @media screen and (min-width: 768px) and (max-width: 1023px) {
+//   padding: 0px 20px;
+//   max-width: 768px;
+// }
+// @media screen and (min-width: 1024px) and (max-width: 1279px) {
+//   max-width: 960px;
+// }
+// @media screen and (min-width: 1280px) and (max-width: 1365px) {
+//   max-width: 1200px;
+// }
+// @media screen and (min-width: 1366px) {
+//   max-width: 1320px;
+// }

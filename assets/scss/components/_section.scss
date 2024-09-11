@@ -1,8 +1,10 @@
 .section {
   display: block;
   position: relative;
-  overflow-x: hidden;
-  overflow-y: auto;
+  width: 100%;
+  &.full {
+    min-height: 100vh;
+  }
 }
 
 .section-container {
@@ -13,79 +15,22 @@
   margin: 0 auto;
   height: auto;
   z-index: 1;
-  a {
-    text-decoration: none;
-  }
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin: 0;
-    padding: 0;
-  }
+
   @media screen and (max-width: 767px) {
     padding: 0px 20px;
     max-width: 480px;
   }
-  @media screen and (min-width: 768px) and (max-width: 1279px) {
-    padding: 0px 36px;
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    padding: 0px 20px;
     max-width: 768px;
   }
-  @media screen and (min-width: 1280px) {
-    max-width: 1180px;
+  @media screen and (min-width: 1024px) and (max-width: 1279px) {
+    max-width: 960px;
   }
-}
-
-.section-background {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  position: absolute;
-  z-index: 0;
-  left: 0;
-  top: 0px;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  img,
-  picture {
-    position: absolute;
-    max-height: 100%;
-    z-index: 1;
+  @media screen and (min-width: 1280px) and (max-width: 1365px) {
+    max-width: 1200px;
   }
-  picture {
-    img {
-      width: 100%;
-      height: 100%;
-    }
-  }
-  &:before {
-    z-index: 2;
-  }
-}
-
-.section-background,
-.noise {
-  &:before {
-    content: '';
-    display: block;
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    background: url('../img/noise.gif');
-    background-size: 340px auto;
-    opacity: 0.1;
-  }
-}
-
-.noise {
-  &:before {
-    z-index: 0;
+  @media screen and (min-width: 1366px) {
+    max-width: 1320px;
   }
 }
