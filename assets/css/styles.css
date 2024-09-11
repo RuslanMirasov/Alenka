@@ -359,7 +359,6 @@ h6 {
   font-family: var(--paragmatica);
   font-size: 16px;
   height: 40px;
-  margin-top: 26px;
 }
 .button.button--icon {
   height: 32px;
@@ -528,6 +527,9 @@ h2.modal__title {
   width: 100%;
   max-width: 288px;
 }
+.form .button {
+  margin-top: 26px;
+}
 
 .label {
   display: block;
@@ -535,6 +537,9 @@ h2.modal__title {
 }
 .label.invalid {
   color: var(--invalid);
+}
+.label.invalid .label__text .error {
+  display: inline-block;
 }
 .label .label__text {
   display: flex;
@@ -550,7 +555,14 @@ h2.modal__title {
   margin-bottom: 5px;
 }
 .label .label__text .error {
+  display: none;
   color: var(--invalid);
+}
+.label .label__text a {
+  display: inline-block;
+  line-height: 1;
+  color: var(--red);
+  border-bottom: 1px solid var(--red);
 }
 
 .input {
@@ -584,6 +596,9 @@ h2.modal__title {
   transition: 0.3s;
   opacity: 1;
 }
+.input:focus {
+  border: 2px solid var(--brown);
+}
 .input:focus::-moz-placeholder {
   color: #a5a5a5;
   opacity: 0;
@@ -598,8 +613,60 @@ h2.modal__title {
 }
 
 .invalid .input,
-.invalid.input {
+.input.invalid {
   border: 2px solid var(--invalid);
+}
+
+.fieldset {
+  border: none;
+}
+.fieldset .label {
+  margin-top: 20px;
+}
+
+.checkbox {
+  display: none;
+}
+
+.checkbox + .label__text {
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  opacity: 1;
+  text-align: left;
+  padding-left: 42px;
+  position: relative;
+}
+.checkbox + .label__text:before, .checkbox + .label__text:after {
+  content: "";
+  position: absolute;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.checkbox + .label__text:before {
+  left: 0px;
+  top: 0px;
+  width: 26px;
+  height: 26px;
+  background: var(--white);
+  border: 2px solid var(--brown);
+  border-radius: 4px;
+}
+.checkbox + .label__text:after {
+  left: 6px;
+  top: 7px;
+  width: 14px;
+  height: 8px;
+  border-left: 3px solid var(--white);
+  border-bottom: 3px solid var(--white);
+  transform: scale(0.7) rotate(-45deg);
+}
+
+.checkbox:checked + .label__text:before {
+  background: var(--brown);
+}
+.checkbox:checked + .label__text:after {
+  transform: scale(1) rotate(-45deg);
 }
 
 .section--hero {

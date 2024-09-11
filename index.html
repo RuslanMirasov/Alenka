@@ -37,18 +37,18 @@
             <li><a href="#" data-scrollto="section--prizes">Призы</a></li>
             <li><a href="#" data-scrollto="section--test">Тест</a></li>
             <li><a href="#" data-scrollto="section--winners">Победители</a></li>
-            <li><a href="#" data-modal="feedback">Обратная связь</a></li>
+            <li><a href="#" data-modal="callback">Обратная связь</a></li>
           </menu>
         </nav>
         <!--Header buttons-->
         <ul class="header__buttons">
           <li>
-            <button type="button" data-modal="login" class="button button--small">
+            <button type="button" data-modal="сheque" class="button button--small">
               <span>Загрузить чек</span>
             </button>
           </li>
           <li>
-            <a href="./lk.html" class="button button--icon">
+            <a href="#" class="button button--icon" data-modal="login">
               <img src="./assets/img/svg/lk.svg" alt="Алёнка" />
             </a>
           </li>
@@ -119,15 +119,15 @@
           <h2 class="modal__title">Авторизация</h2>
           <!-- <p class="modal__subtitle">Внимательно введите <br />данные чека в поля ниже</p> -->
           <form action="#" method="POST" class="form" novalidate>
-            <label class="label">
-              <p class="label__text">Email</p>
-              <input type="email" name="email" class="input" required />
+            <label class="label invalid">
+              <p class="label__text">Email <span class="error">Не верный формат E-mail</span></p>
+              <input type="email" name="email" class="input invalid" required />
             </label>
-            <label class="label">
+            <label class="label invalid">
               <p class="label__text">Пароль <span class="error">Заполните поле</span></p>
-              <input type="password" name="password" class="input" required />
+              <input type="password" name="password" class="input invalid" required />
             </label>
-            <button type="submit" class="button button--submit">Отправить чек</button>
+            <button type="submit" class="button button--submit">Войти</button>
             <ul class="modal__links">
               <li><a href="#">Забыли пароль?</a></li>
               <li><a href="#" data-modal="registration">Регистрация</a></li>
@@ -161,31 +161,59 @@
               <input type="tel" name="phone" class="input" required />
             </label>
 
-            <label class="label">
-              <input type="checkbox" name="policy" class="checkbox" data-agree required />
-              <p class="label__text">
-                Я ознакомился с Правилами акции, Пользовательским соглашением и даю своё согласие на обработку
-                персональных данных
-              </p>
-            </label>
+            <fieldset class="fieldset">
+              <label class="label">
+                <input type="checkbox" name="policy" class="checkbox" data-agree required />
+                <p class="label__text">
+                  <span>
+                    Я ознакомился с <a href="#" target="_blank">Правилами акции</a>,
+                    <a href="#" target="_blank">Пользовательским соглашением</a> и даю своё согласие на
+                    обработку персональных данных
+                  </span>
+                </p>
+              </label>
 
-            <label class="label">
-              <input type="checkbox" name="subscribe" class="checkbox" required />
-              <p class="label__text">
-                Я даю согласие на получение рекламной рассылки (в т.ч. в виде смс, электронных писем и/или
-                через мессенджеры)
-              </p>
-            </label>
+              <label class="label">
+                <input type="checkbox" name="subscribe" class="checkbox" required />
+                <p class="label__text">
+                  Я даю согласие на получение рекламной рассылки (в т.ч. в виде смс, электронных писем и/или
+                  через мессенджеры)
+                </p>
+              </label>
+            </fieldset>
 
             <button type="submit" class="button button--submit" disabled>Зарегистрироваться</button>
+
             <ul class="modal__links">
               <li><a href="#" data-modal="login">Авторизация</a></li>
+            </ul>
+          </form>
+        </div>
+
+        <!--СHEQUE MODAL-->
+        <div class="modal" id="сheque">
+          <button type="button" class="modal__close"></button>
+          <h2 class="modal__title">Загрузка чека</h2>
+          <!-- <p class="modal__subtitle">Внимательно введите <br />данные чека в поля ниже</p> -->
+          <form action="#" method="POST" class="form" novalidate>
+            <label class="label">
+              <p class="label__text">Email</p>
+              <input type="email" name="email" class="input" required />
+            </label>
+            <label class="label">
+              <p class="label__text">Пароль <span class="error">Заполните поле</span></p>
+              <input type="password" name="password" class="input" required />
+            </label>
+            <button type="button" class="button" data-modal="registration">Загрузить</button>
+            <ul class="modal__links">
+              <li><a href="#" data-modal="registration">Ввести данные чека вручную</a></li>
             </ul>
           </form>
         </div>
       </div>
     </div>
 
+    <script src="./assets/js/form-validation.js" type="module" defer></script>
     <script src="./assets/js/modal.js" type="module" defer></script>
     <script src="./assets/js/scripts.js" type="module" defer></script>
   </body>
