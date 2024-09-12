@@ -44,6 +44,10 @@ const handleBackdropClick = e => {
 const openModal = e => {
   e.preventDefault();
   const id = e.target.dataset.modal;
+  popup(id);
+};
+
+export const popup = id => {
   const activeModal = document.querySelector('.modal.active');
   const currentModal = document.getElementById(id);
   if (!activeModal) {
@@ -59,7 +63,7 @@ const openModal = e => {
     currentModal.classList.add('active');
     setTimeout(() => {
       currentModal.classList.add('visible');
-    }, 10);
+    }, 20);
   }, 300);
 };
 
@@ -83,3 +87,6 @@ popupButtons.forEach(button => {
 });
 
 backdrop.addEventListener('click', handleBackdropClick);
+
+window.popup = popup;
+window.closeModal = closeModal;

@@ -62,6 +62,7 @@
   transition: 0.3s;
   font-size: 14px;
   color: #555555;
+  outline: none;
   &::placeholder {
     color: #a5a5a5;
     transition: 0.3s;
@@ -73,6 +74,11 @@
       color: #a5a5a5;
       opacity: 0;
     }
+  }
+  &.input--textarea {
+    padding: 10px 12px;
+    resize: none;
+    min-height: 86px;
   }
 }
 

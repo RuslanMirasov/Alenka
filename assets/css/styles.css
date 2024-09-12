@@ -650,6 +650,7 @@ h2.modal__title {
   transition: 0.3s;
   font-size: 14px;
   color: #555555;
+  outline: none;
 }
 .input::-moz-placeholder {
   color: #a5a5a5;
@@ -682,6 +683,11 @@ h2.modal__title {
 .input:focus::placeholder {
   color: #a5a5a5;
   opacity: 0;
+}
+.input.input--textarea {
+  padding: 10px 12px;
+  resize: none;
+  min-height: 86px;
 }
 
 .invalid .input,
