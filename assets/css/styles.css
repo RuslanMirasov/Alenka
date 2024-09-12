@@ -321,6 +321,10 @@ h6 {
   height: 50px;
   padding: 0px 36px;
   font-size: 18px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   display: inline-flex;
   position: relative;
   overflow: hidden;

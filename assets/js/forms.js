@@ -79,3 +79,64 @@ function handleFile(file) {
     }
   }
 }
+
+// PHONE MASK
+const handleTelFocus = e => {
+  const tel = e.target;
+  if (!tel.value) {
+    tel.value = '+7 ___ ___-__-__';
+  }
+};
+
+const handleTelBlur = e => {
+  const tel = e.target;
+  if (tel.value === '+7 ___ ___-__-__') {
+    tel.value = '';
+  }
+};
+
+const handleTelKeydown = e => {
+  e.preventDefault();
+  const tel = e.target;
+  const value = tel.value;
+  let cursorPosition = tel.selectionStart;
+
+  if (cursorPosition <= 2) return;
+
+  if (e.key === 'Backspace') {
+    while (cursorPosition > 2 && !/\d/.test(value[cursorPosition - 1])) {
+      cursorPosition--;
+    }
+
+    if (cursorPosition > 2 && /\d/.test(value[cursorPosition - 1])) {
+      const newValue = value.slice(0, cursorPosition - 1) + '_' + value.slice(cursorPosition);
+      tel.value = newValue;
+      tel.setSelectionRange(cursorPosition - 1, cursorPosition - 1);
+    }
+    return;
+  }
+
+  if (/\d/.test(e.key)) {
+    const underscoreIndex = value.indexOf('_');
+    if (underscoreIndex !== -1 && underscoreIndex > 2) {
+      const newValue = value.slice(0, underscoreIndex) + e.key + value.slice(underscoreIndex + 1);
+      tel.value = newValue;
+      tel.setSelectionRange(underscoreIndex + 1, underscoreIndex + 1);
+    }
+  }
+};
+
+const handleTelClick = e => {
+  const tel = e.target;
+  const underscoreIndex = tel.value.indexOf('_');
+  tel.setSelectionRange(underscoreIndex, underscoreIndex);
+};
+
+inputs.forEach(input => {
+  if (input.type === 'tel') {
+    input.addEventListener('focus', handleTelFocus);
+    input.addEventListener('blur', handleTelBlur);
+    input.addEventListener('keydown', handleTelKeydown);
+    input.addEventListener('click', handleTelClick);
+  }
+});
