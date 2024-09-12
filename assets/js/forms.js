@@ -99,11 +99,13 @@ const handleTelKeydown = e => {
   e.preventDefault();
   const tel = e.target;
   const value = tel.value;
+  const key = e.data;
+
   let cursorPosition = tel.selectionStart;
 
   if (cursorPosition <= 2) return;
 
-  if (e.key === 'Backspace') {
+  if (key === null) {
     while (cursorPosition > 2 && !/\d/.test(value[cursorPosition - 1])) {
       cursorPosition--;
     }
@@ -116,10 +118,10 @@ const handleTelKeydown = e => {
     return;
   }
 
-  if (/\d/.test(e.key)) {
+  if (/\d/.test(key)) {
     const underscoreIndex = value.indexOf('_');
     if (underscoreIndex !== -1 && underscoreIndex > 2) {
-      const newValue = value.slice(0, underscoreIndex) + e.key + value.slice(underscoreIndex + 1);
+      const newValue = value.slice(0, underscoreIndex) + key + value.slice(underscoreIndex + 1);
       tel.value = newValue;
       tel.setSelectionRange(underscoreIndex + 1, underscoreIndex + 1);
     }
@@ -136,7 +138,7 @@ inputs.forEach(input => {
   if (input.type === 'tel') {
     input.addEventListener('focus', handleTelFocus);
     input.addEventListener('blur', handleTelBlur);
-    input.addEventListener('keydown', handleTelKeydown);
+    input.addEventListener('beforeinput', handleTelKeydown);
     input.addEventListener('click', handleTelClick);
   }
 });
