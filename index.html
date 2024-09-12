@@ -110,22 +110,23 @@
       </div>
     </footer>
 
-    <!-- MODALS AND POPUPS -->
+    <!-- MODALS -->
+
     <div class="backdrop">
       <div class="modals">
-        <!-- LOGIN -->
+        <!-- LOGIN MODAL-->
         <div class="modal" id="login">
           <button type="button" class="modal__close"></button>
           <h2 class="modal__title">Авторизация</h2>
           <!-- <p class="modal__subtitle">Внимательно введите <br />данные чека в поля ниже</p> -->
           <form action="#" method="POST" class="form" novalidate>
-            <label class="label invalid">
+            <label class="label">
               <p class="label__text">Email <span class="error">Не верный формат E-mail</span></p>
-              <input type="email" name="email" class="input invalid" required />
+              <input type="email" name="email" class="input" required />
             </label>
-            <label class="label invalid">
+            <label class="label">
               <p class="label__text">Пароль <span class="error">Заполните поле</span></p>
-              <input type="password" name="password" class="input invalid" required />
+              <input type="password" name="password" class="input" required />
             </label>
             <button type="submit" class="button button--submit">Войти</button>
             <ul class="modal__links">
@@ -182,11 +183,12 @@
               </label>
             </fieldset>
 
-            <button type="submit" class="button button--submit" disabled>Зарегистрироваться</button>
-
-            <ul class="modal__links">
-              <li><a href="#" data-modal="login">Авторизация</a></li>
-            </ul>
+            <footer>
+              <button type="submit" class="button button--submit" disabled>Зарегистрироваться</button>
+              <ul class="modal__links">
+                <li><a href="#" data-modal="login">Авторизация</a></li>
+              </ul>
+            </footer>
           </form>
         </div>
 
@@ -194,21 +196,54 @@
         <div class="modal" id="сheque">
           <button type="button" class="modal__close"></button>
           <h2 class="modal__title">Загрузка чека</h2>
-          <!-- <p class="modal__subtitle">Внимательно введите <br />данные чека в поля ниже</p> -->
-          <form action="#" method="POST" class="form" novalidate>
-            <label class="label">
-              <p class="label__text">Email</p>
-              <input type="email" name="email" class="input" required />
-            </label>
-            <label class="label">
-              <p class="label__text">Пароль <span class="error">Заполните поле</span></p>
-              <input type="password" name="password" class="input" required />
-            </label>
+
+          <ul class="modal__list">
+            <li>
+              <img src="./assets/img/svg/list1.svg" alt="Алёнка" />
+              <!-- <svg>
+                <use href="./assets/img/icons.svg#list1"></use>
+              </svg> -->
+              <p>Нажмите «Загрузить»</p>
+            </li>
+            <li>
+              <img src="./assets/img/svg/list2.svg" alt="Алёнка" />
+              <!-- <svg>
+                <use href="./assets/img/icons.svg#list1"></use>
+              </svg> -->
+              <p>Выберите фото чека</p>
+            </li>
+            <li>
+              <img src="./assets/img/svg/list3.svg" alt="Алёнка" />
+              <!-- <svg>
+                <use href="./assets/img/icons.svg#list1"></use>
+              </svg> -->
+              <p>Фото чека должно быть:</p>
+              <ul>
+                <li>чётким</li>
+                <li>с полным списком продуктов</li>
+                <li>на фото должен быть QR код</li>
+              </ul>
+            </li>
+            <li>
+              <img src="./assets/img/svg/list4.svg" alt="Алёнка" />
+              <!-- <svg>
+                <use href="./assets/img/icons.svg#list1"></use>
+              </svg> -->
+              <p>Если фото окажется плохого качества, чек принят не будет</p>
+            </li>
+          </ul>
+
+          <div class="modal__check-download">
+            <img src="./assets/img/check.png" alt="Пример чека" />
+            <p>Пример чека</p>
+          </div>
+
+          <div>
             <button type="button" class="button" data-modal="registration">Загрузить</button>
             <ul class="modal__links">
               <li><a href="#" data-modal="registration">Ввести данные чека вручную</a></li>
             </ul>
-          </form>
+          </div>
         </div>
       </div>
     </div>
