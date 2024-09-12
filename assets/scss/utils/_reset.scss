@@ -63,3 +63,7 @@ menu,
 ol {
   list-style: none;
 }
+
+input::-webkit-autofill {
+  background-color: transparent !important;
+}
