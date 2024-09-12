@@ -59,7 +59,7 @@ const openModal = e => {
     currentModal.classList.add('active');
     setTimeout(() => {
       currentModal.classList.add('visible');
-    }, 20);
+    }, 10);
   }, 300);
 };
 

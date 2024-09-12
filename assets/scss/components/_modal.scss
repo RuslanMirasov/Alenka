@@ -84,7 +84,8 @@
   }
 }
 
-.modal__close {
+.modal__close,
+.file-reset {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -118,6 +119,21 @@
   }
   &::after {
     transform: rotate(-45deg);
+  }
+}
+
+.file-reset {
+  width: 26px;
+  height: 26px;
+  right: -4px;
+  top: -4px;
+  background: var(--red);
+  border-radius: 20px;
+  z-index: 2;
+  &::before,
+  &::after {
+    width: 14px;
+    background: var(--white);
   }
 }
 

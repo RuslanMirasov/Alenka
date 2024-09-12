@@ -118,7 +118,6 @@
         <div class="modal" id="login">
           <button type="button" class="modal__close"></button>
           <h2 class="modal__title">Авторизация</h2>
-          <!-- <p class="modal__subtitle">Внимательно введите <br />данные чека в поля ниже</p> -->
           <form action="#" method="POST" class="form" novalidate>
             <label class="label">
               <p class="label__text">Email <span class="error">Не верный формат E-mail</span></p>
@@ -196,7 +195,6 @@
         <div class="modal" id="сheque">
           <button type="button" class="modal__close"></button>
           <h2 class="modal__title">Загрузка чека</h2>
-
           <ul class="modal__list">
             <li>
               <img src="./assets/img/svg/list1.svg" alt="Алёнка" />
@@ -232,18 +230,72 @@
               <p>Если фото окажется плохого качества, чек принят не будет</p>
             </li>
           </ul>
-
           <div class="modal__check-download">
             <img src="./assets/img/check.png" alt="Пример чека" />
             <p>Пример чека</p>
           </div>
-
           <div>
-            <button type="button" class="button" data-modal="registration">Загрузить</button>
+            <button type="button" class="button" data-modal="сheque-photo">Загрузить</button>
             <ul class="modal__links">
-              <li><a href="#" data-modal="registration">Ввести данные чека вручную</a></li>
+              <li><a href="#" data-modal="сheque-data">Ввести данные чека вручную</a></li>
             </ul>
           </div>
+        </div>
+
+        <!-- СHEQUE DATA MODAL-->
+        <div class="modal" id="сheque-data">
+          <button type="button" class="modal__close"></button>
+          <h2 class="modal__title">Ввод данных чека</h2>
+          <p class="modal__subtitle">Внимательно введите <br />данные чека в поля ниже</p>
+          <form action="#" method="POST" class="form" novalidate>
+            <label class="label">
+              <p class="label__text">ФН</p>
+              <input type="text" name="fn" class="input" />
+            </label>
+            <label class="label">
+              <p class="label__text">ФД</p>
+              <input type="text" name="fd" class="input" />
+            </label>
+            <label class="label">
+              <p class="label__text">ФП</p>
+              <input type="text" name="fp" class="input" />
+            </label>
+            <label class="label">
+              <p class="label__text">Дата покупки</p>
+              <input type="date" name="date" class="input" required />
+            </label>
+            <label class="label">
+              <p class="label__text">Время покупки</p>
+              <input type="time" name="time" class="input" required />
+            </label>
+            <label class="label">
+              <p class="label__text">Сумма покупки</p>
+              <input type="number" name="sum" class="input" required />
+            </label>
+            <button type="submit" class="button button--submit">Отправить чек</button>
+            <ul class="modal__links">
+              <li><a href="#" data-modal="сheque-photo">Попробовать снова загрузить фото</a></li>
+            </ul>
+          </form>
+        </div>
+
+        <!-- СHEQUE PHOTO DOWNLOAD MODAL-->
+        <div class="modal" id="сheque-photo">
+          <button type="button" class="modal__close"></button>
+          <h2 class="modal__title">Загрузка чека</h2>
+          <form action="#" method="POST" class="form" enctype="multipart/form-data" novalidate>
+            <div class="download-file">
+              <label class="label-for-file">
+                <input type="file" name="сheque" class="input-file" />
+                <img src="./assets/img/svg/plus.svg" alt="Алёнка" />
+                <p class="label__text">Перетащите фото чека или нажмите для выбора</p>
+              </label>
+            </div>
+            <button type="submit" class="button button--submit">Загрузить</button>
+            <ul class="modal__links">
+              <li><a href="#" data-modal="сheque-data">Ввести данные чека вручную</a></li>
+            </ul>
+          </form>
         </div>
       </div>
     </div>
