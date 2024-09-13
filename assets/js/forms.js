@@ -95,17 +95,26 @@ const handleTelBlur = e => {
   }
 };
 
+const handleTelInput = e => {
+  e.preventDefault();
+  const input = e.target;
+  const tel = input.closest('form').querySelector("[type='tel']");
+  const phonePattern = /^\+7\s\d{3}\s\d{3}-\d{2}-\d{2}$/;
+  if (!phonePattern.test(tel.value)) {
+    tel.value = '';
+  }
+};
+
 const handleTelKeydown = e => {
   e.preventDefault();
+
   const tel = e.target;
   const value = tel.value;
-  const key = e.data;
-
+  const inputType = e.inputType;
   let cursorPosition = tel.selectionStart;
-
   if (cursorPosition <= 2) return;
 
-  if (key === null) {
+  if (inputType === 'deleteContentBackward') {
     while (cursorPosition > 2 && !/\d/.test(value[cursorPosition - 1])) {
       cursorPosition--;
     }
@@ -118,10 +127,10 @@ const handleTelKeydown = e => {
     return;
   }
 
-  if (/\d/.test(key)) {
+  if (/\d/.test(e.data)) {
     const underscoreIndex = value.indexOf('_');
     if (underscoreIndex !== -1 && underscoreIndex > 2) {
-      const newValue = value.slice(0, underscoreIndex) + key + value.slice(underscoreIndex + 1);
+      const newValue = value.slice(0, underscoreIndex) + e.data + value.slice(underscoreIndex + 1);
       tel.value = newValue;
       tel.setSelectionRange(underscoreIndex + 1, underscoreIndex + 1);
     }
@@ -139,6 +148,7 @@ inputs.forEach(input => {
     input.addEventListener('focus', handleTelFocus);
     input.addEventListener('blur', handleTelBlur);
     input.addEventListener('beforeinput', handleTelKeydown);
+    input.addEventListener('input', handleTelInput);
     input.addEventListener('click', handleTelClick);
   }
 });
