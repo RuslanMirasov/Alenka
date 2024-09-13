@@ -4,21 +4,11 @@
   width: 100%;
   height: 68px;
   background: var(--white);
-  border-bottom: 1px solid #ccc;
-  background: linear-gradient(
-    80deg,
-    #f8f2d5 0%,
-    #ffffff 10%,
-    #ffffff 40%,
-    #f8f2d5 60%,
-    #ffffff 75%,
-    #ffffff 85%,
-    #f8f2d5 100%
-  );
-
+  background: linear-gradient(80deg, #f8f2d5 0%, #ffffff 10%, #ffffff 40%, #f8f2d5 60%, #ffffff 75%, #ffffff 85%, #f8f2d5 100%);
   top: 0px;
   left: 0px;
   z-index: 10;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
   .section-container {
     display: flex;
     height: 100%;
@@ -26,35 +16,54 @@
     align-items: center;
     align-content: center;
   }
+  @media screen and (max-width: 767px) {
+    height: 50px;
+  }
 }
 
 .logo {
   display: inline-flex;
   flex-wrap: nowrap;
-  align-items: center;
-  align-content: center;
-  min-width: 196px;
-  svg {
-    width: 112px;
-    height: 50px;
-  }
-}
-
-.menu {
-  display: inline-flex;
-  flex-wrap: wrap;
-  align-items: center;
-  align-content: center;
+  align-items: flex-end;
+  align-content: flex-end;
   gap: 32px;
+  position: relative;
+  top: -4px;
 
-  a {
-    font-family: var(--paragmatica-bold);
-    font-size: 16px;
-    line-height: 1;
-    transition: color 0.2s;
-    color: var(--nav-link-color);
-    &:hover {
-      color: var(--color);
+  img,
+  picture {
+    display: block;
+    height: auto;
+  }
+
+  .logo-alenka {
+    width: 100px;
+  }
+
+  .logo-magnit {
+    width: 120px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    gap: 32px;
+  }
+  @media screen and (min-width: 1024px) and (max-width: 1279px) {
+    gap: 20px;
+    .logo-alenka {
+      width: 70px;
+    }
+    .logo-magnit {
+      width: 80px;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    top: 0px;
+    gap: 14px;
+    .logo-alenka {
+      width: 78px;
+    }
+    .logo-magnit {
+      width: 30px;
     }
   }
 }
@@ -65,4 +74,12 @@
   align-items: center;
   align-content: center;
   gap: 16px;
+  .button.button--icon {
+    display: none;
+  }
+  @media screen and (min-width: 768px) {
+    .button.button--icon {
+      display: flex;
+    }
+  }
 }

@@ -1,5 +1,12 @@
 import { popup } from './modal.js';
 const forms = document.querySelectorAll('.form');
+
+const regex = {
+  phone: /^\+7\s\d{3}\s\d{3}-\d{2}-\d{2}$/,
+  email: /^[\w\.-]+@[\w\.-]+\.\w{2,4}$/,
+  password: /^[a-zA-Z0-9!@#$%^&*()_+{}\[\]:;"'<>,.?\/\\\-=`~]+$/,
+};
+
 const errorMessages = {
   empty: 'Поле не заполнено',
   email: 'Не верный формат E-mail',
@@ -30,13 +37,13 @@ const inputValidation = input => {
   if (!value) {
     isValid = false;
     addError(labelEl, input, errorEl, errorMessages.empty);
-  } else if (input.type === 'email' && !/^[\w\.-]+@[\w\.-]+\.\w{2,4}$/.test(value)) {
+  } else if (input.type === 'email' && !regex.email.test(value)) {
     isValid = false;
     addError(labelEl, input, errorEl, errorMessages.email);
-  } else if (input.type === 'password' && !/^[a-zA-Z0-9!@#$%^&*()_+{}\[\]:;"'<>,.?\/\\\-=`~]+$/.test(value)) {
+  } else if (input.type === 'password' && !regex.password.test(value)) {
     isValid = false;
     addError(labelEl, input, errorEl, errorMessages.password);
-  } else if (input.type === 'tel' && !/^\+7\s\d{3}\s\d{3}-\d{2}-\d{2}$/.test(value)) {
+  } else if (input.type === 'tel' && !regex.phone.test(value)) {
     isValid = false;
     addError(labelEl, input, errorEl, errorMessages.phone);
   }

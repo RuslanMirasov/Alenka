@@ -12,6 +12,9 @@
 
   --nav-link-color: #05065a;
   --bg: #05003a;
+  --menu-gradient: linear-gradient(120deg, #f4db6c, #fff8d8, #f4db6c);
+  --modal-bg-radial: radial-gradient(#d3c587 0%, #f4db6c 100%);
+  --modal-bg: linear-gradient(90deg, rgba(244, 219, 108, 1) 0%, rgba(255, 255, 255, 1) 50%, rgba(244, 219, 108, 1) 100%);
 
   --paragmatica: 'Pragmatica regular';
   --paragmatica-bold: 'Pragmatica bold';
@@ -20,14 +23,16 @@
 
 //Basics
 @import './basics/fonts';
-@import './basics/animations';
 @import './basics/reset';
 @import './basics/typography';
+@import './basics/animations';
 
 //Components
 @import './components/body';
 @import './components/section';
 @import './components/header';
+@import './components/burger';
+@import './components/menu';
 @import './components/footer';
 @import './components/buttons';
 @import './components/modal';
@@ -36,20 +41,18 @@
 //Sections
 @import './sections/hero';
 
-// @media screen and (max-width: 767px) {
-//   padding: 0px 20px;
-//   max-width: 480px;
-// }
-// @media screen and (min-width: 768px) and (max-width: 1023px) {
-//   padding: 0px 20px;
-//   max-width: 768px;
-// }
-// @media screen and (min-width: 1024px) and (max-width: 1279px) {
-//   max-width: 960px;
+// @media screen and (min-width: 1366px) {
+//   min-width: 196px;
 // }
 // @media screen and (min-width: 1280px) and (max-width: 1365px) {
-//   max-width: 1200px;
+//   min-width: 196px;
 // }
-// @media screen and (min-width: 1366px) {
-//   max-width: 1320px;
+// @media screen and (min-width: 1024px) and (max-width: 1279px) {
+//   min-width: auto;
+// }
+// @media screen and (min-width: 768px) and (max-width: 1023px) {
+//   min-width: 196px;
+// }
+// @media screen and (max-width: 767px) {
+//   min-width: 196px;
 // }

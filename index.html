@@ -25,52 +25,55 @@
       <div class="section-container">
         <!--Logo-->
         <div class="logo">
-          <a href="#" data-scrollto="section--hero">
-            <svg><use href="./assets/img/icons.svg#logo"></use></svg>
+          <a href="#" data-scrollto="section--hero" class="logo-alenka">
+            <img src="./assets/img/svg/logo.svg" alt="Алёнка" />
+          </a>
+          <a href="#" target="_blank" class="logo-magnit">
+            <picture>
+              <source media="(min-width:768px)" srcset="./assets/img/svg/logo_magnit.svg" />
+              <source media="(max-width:767px)" srcset="./assets/img/svg/logo_magnit_mobil.svg" />
+              <img src="./assets/img/svg/logo_magnit_mobil.svg" alt="Магнит" />
+            </picture>
           </a>
         </div>
         <!--Navigation-->
-        <nav class="navigation">
-          <menu class="menu">
-            <li><a href="#" data-scrollto="section--hero">История</a></li>
-            <li><a href="#" data-scrollto="section--hero">Правила</a></li>
-            <li><a href="#" data-scrollto="section--prizes">Призы</a></li>
-            <li><a href="#" data-scrollto="section--test">Тест</a></li>
-            <li><a href="#" data-scrollto="section--winners">Победители</a></li>
-            <li><a href="#" data-modal="callback">Обратная связь</a></li>
-          </menu>
-        </nav>
+        <div class="menu-backdrop" data-js="menu-backdrop">
+          <div class="menu-body">
+            <nav class="menu">
+              <menu class="menu__list">
+                <li><a href="#" class="menu__link" data-scrollto="section--hero">История</a></li>
+                <li><a href="#" class="menu__link" data-scrollto="section--hero">Правила</a></li>
+                <li><a href="#" class="menu__link" data-scrollto="section--prizes">Призы</a></li>
+                <li><a href="#" class="menu__link" data-scrollto="section--test">Тест</a></li>
+                <li><a href="#" class="menu__link" data-scrollto="section--winners">Победители</a></li>
+                <li><a href="#" class="menu__link" data-modal="callback">Обратная связь</a></li>
+                <li>
+                  <a href="#" class="button button--blue" data-modal="login">
+                    <img src="./assets/img/svg/lk.svg" alt="Алёнка" /> <span>Вход</span></a
+                  >
+                </li>
+              </menu>
+            </nav>
+          </div>
+        </div>
         <!--Header buttons-->
-        <ul class="header__buttons">
-          <li>
-            <button type="button" data-modal="сheque" class="button button--small">
-              <span>Загрузить чек</span>
-            </button>
-          </li>
-          <li>
-            <a href="#" class="button button--icon" data-modal="login">
-              <img src="./assets/img/svg/lk.svg" alt="Алёнка" />
-            </a>
-          </li>
-        </ul>
+        <div class="header__buttons">
+          <button type="button" data-modal="сheque" class="button button--small">
+            <span>Загрузить чек</span>
+          </button>
+          <a href="#" class="button button--icon" data-modal="login">
+            <img src="./assets/img/svg/lk.svg" alt="Алёнка" />
+          </a>
+          <button type="button" class="burger" data-js="burger"><span>burger</span></button>
+        </div>
       </div>
     </header>
 
     <main class="main">
       <!--Section--HERO-->
-      <section class="section section--hero full">
+      <section class="section section--hero">
         <div class="section-container">
           <h1>Привет</h1>
-
-          <!--POPUP BUTTON-->
-          <button type="button" class="button button--big" data-modal="confirm-password">
-            CONFIRM-PASSWORD
-            <img src="./assets/img/svg/arr-right.svg" alt="Алёнка" />
-          </button>
-
-          <button type="button" data-modal="confirm-сheque-download" class="button button--biege">
-            Чек загружен
-          </button>
         </div>
       </section>
 
@@ -160,8 +163,7 @@
                 <p class="label__text">
                   <span>
                     Я ознакомился с <a href="#" target="_blank">Правилами акции</a>,
-                    <a href="#" target="_blank">Пользовательским соглашением</a> и даю своё согласие на
-                    обработку персональных данных
+                    <a href="#" target="_blank">Пользовательским соглашением</a> и даю своё согласие на обработку персональных данных
                   </span>
                 </p>
               </label>
@@ -169,8 +171,7 @@
               <label class="label">
                 <input type="checkbox" name="subscribe" class="checkbox" />
                 <p class="label__text">
-                  Я даю согласие на получение рекламной рассылки (в т.ч. в виде смс, электронных писем и/или
-                  через мессенджеры)
+                  Я даю согласие на получение рекламной рассылки (в т.ч. в виде смс, электронных писем и/или через мессенджеры)
                 </p>
               </label>
             </fieldset>
@@ -370,6 +371,7 @@
       </div>
     </div>
 
+    <script src="./assets/js/menu.js" type="module" defer></script>
     <script src="./assets/js/forms.js" type="module" defer></script>
     <script src="./assets/js/form-validation.js" type="module" defer></script>
     <script src="./assets/js/modal.js" type="module" defer></script>

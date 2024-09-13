@@ -4,7 +4,9 @@ const scrollbarWidth = window.innerWidth - document.querySelector('.main').offse
 const popupButtons = document.querySelectorAll('[data-modal]');
 
 const freezeBody = () => {
-  document.body.classList.add('freez');
+  if (!document.body.classList.contains('freez')) {
+    document.body.classList.add('freez');
+  }
   backdrop.classList.add('active');
   modifyScrollbar();
 };
@@ -12,12 +14,15 @@ const freezeBody = () => {
 const unfreezeBody = () => {
   backdrop.classList.remove('active');
   setTimeout(() => {
-    document.body.classList.remove('freez');
+    const nenuBackdrop = document.querySelector('[data-js="menu-backdrop"]');
+    if (nenuBackdrop && !nenuBackdrop.classList.contains('is-open')) {
+      document.body.classList.remove('freez');
+    }
     modifyScrollbar();
   }, 300);
 };
 
-const modifyScrollbar = () => {
+export const modifyScrollbar = () => {
   if (document.body.classList.contains('freez')) {
     fixedElements.forEach(fixedElement => {
       document.body.style.paddingRight = scrollbarWidth + 'px';
@@ -32,11 +37,7 @@ const modifyScrollbar = () => {
 };
 
 const handleBackdropClick = e => {
-  if (
-    e.target.classList.contains('backdrop') ||
-    e.target.classList.contains('modals') ||
-    e.target.classList.contains('modal__close')
-  ) {
+  if (e.target.classList.contains('backdrop') || e.target.classList.contains('modals') || e.target.classList.contains('modal__close')) {
     closeModal();
   }
 };
@@ -69,9 +70,13 @@ export const popup = id => {
 
 const closeActiveModal = () => {
   const activeModal = document.querySelector('.modal.active');
+  const activeModalForm = activeModal.querySelector('.form');
   activeModal.classList.remove('visible');
   setTimeout(() => {
     activeModal.classList.remove('active');
+    if (activeModalForm) {
+      activeModalForm.reset();
+    }
   }, 300);
 };
 
