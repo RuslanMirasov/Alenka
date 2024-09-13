@@ -15,9 +15,21 @@
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-20px);
+    transform: translateY(-8%);
   }
   100% {
     transform: translateY(0);
+  }
+}
+
+@keyframes raketa {
+  0% {
+    transform: skale(1) translate(0%, 0%);
+  }
+  50% {
+    transform: scale(0.8) translate(5%, -5%);
+  }
+  100% {
+    transform: translateY(1) translate(0%, 0%);
   }
 }
