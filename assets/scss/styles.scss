@@ -16,9 +16,9 @@
   --modal-bg-radial: radial-gradient(#d3c587 0%, #f4db6c 100%);
   --modal-bg: linear-gradient(90deg, rgba(244, 219, 108, 1) 0%, rgba(255, 255, 255, 1) 50%, rgba(244, 219, 108, 1) 100%);
 
-  --paragmatica: 'Pragmatica regular';
-  --paragmatica-bold: 'Pragmatica bold';
-  --serif: 'serif';
+  --paragmatica: 'Pragmatica regular', verdana;
+  --paragmatica-bold: 'Pragmatica bold', verdana;
+  --serif: 'serif', sans-serif;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
