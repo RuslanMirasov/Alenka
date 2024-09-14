@@ -16,7 +16,7 @@
   --modal-bg: linear-gradient(90deg, rgba(244, 219, 108, 1) 0%, rgba(255, 255, 255, 1) 50%, rgba(244, 219, 108, 1) 100%);
   --paragmatica: "Pragmatica regular";
   --paragmatica-bold: "Pragmatica bold";
-  --serif: "serif";
+  --serif: "serif2";
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -1547,7 +1547,7 @@ h2.modal__title {
   right: 0px;
   bottom: 0px;
   overflow: hidden;
-  background: url("../img/gif/starsBg.webp") repeat-y center top;
+  background: url("../img/gif/starsBg.gif") repeat-y center top;
   background-size: 100% auto;
   -webkit-user-select: none;
      -moz-user-select: none;
