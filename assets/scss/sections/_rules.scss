@@ -1,11 +1,12 @@
 .section--rules {
   padding-top: 70px;
-  padding-bottom: 146px;
+  padding-bottom: 100px;
   z-index: 2;
 }
 
 .rules {
   display: flex;
+  width: 100%;
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
@@ -18,7 +19,6 @@
   color: var(--brown);
   text-align: center;
   counter-reset: item;
-
   li {
     position: relative;
     width: calc((100% - 4 * 50px) / 5);
@@ -48,6 +48,91 @@
       font-size: 18px;
       line-height: 1.1;
       margin-bottom: 8px;
+    }
+  }
+}
+
+@media screen and (max-width: 1365px) {
+  .rules {
+    gap: 20px;
+    li {
+      width: calc((100% - 4 * 20px) / 5);
+      &:before {
+        font-size: 100px;
+      }
+      .title {
+        width: calc(100% + 20px);
+        transform: translate(-10px, 0%);
+        margin-top: -40px;
+      }
+      p {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1279px) {
+  .rules {
+    gap: 10px;
+    li {
+      width: calc((100% - 4 * 10px) / 5);
+      &:before {
+        font-size: 100px;
+      }
+      .title {
+        width: calc(100% + 10px);
+        transform: translate(-5px, 0%);
+      }
+      p {
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .rules {
+    gap: 10px;
+    padding-bottom: 40px;
+    li {
+      position: static;
+      width: calc((100% - 1 * 10px) / 2);
+      &:before {
+        font-size: 100px;
+      }
+      .title {
+        width: 100%;
+        transform: translate(0px, 0%);
+      }
+      p {
+        font-size: 18px;
+      }
+      .button {
+        bottom: -25px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .rules {
+    gap: 24px;
+    padding: 20px;
+    padding-bottom: 40px;
+    margin-bottom: 320px;
+    border-radius: 32px;
+    li {
+      width: 100%;
+      &:before {
+        font-size: 128px;
+      }
+      p br {
+        display: none;
+      }
+      .button {
+        bottom: -25px;
+      }
     }
   }
 }

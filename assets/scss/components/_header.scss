@@ -97,4 +97,8 @@
   @media screen and (max-width: 850px) {
     display: none;
   }
+  @media screen and (max-width: 1279px) {
+    width: 70px;
+    transform: translate(-90%, -12px);
+  }
 }
