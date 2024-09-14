@@ -106,6 +106,13 @@
       z-index: 1;
       width: auto;
       height: auto;
+      left: 0%;
+      top: 0%;
+      animation: fallingStar 10s linear infinite 0s;
+      &:first-child {
+        left: 50%;
+        animation: fallingStar 10s linear infinite 0.5s;
+      }
     }
     &.bg-head {
       width: 100%;

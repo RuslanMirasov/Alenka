@@ -25,14 +25,14 @@
 
 @font-face {
   font-family: "Pragmatica regular";
-  src: url("../fonts/ok-pragmatica-regular.woff2") format("woff2"), url("../fonts/ok-pragmatica-regular.woff") format("woff"), url("../fonts/ok-pragmatica-regular.ttf") format("truetype");
+  src: url("../fonts/ok-pragmatica-regular.woff2") format("woff2"), url("../fonts/ok-pragmatica-regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Pragmatica bold";
-  src: url("../fonts/ok-pragmatica-bold.woff2") format("woff2"), url("../fonts/ok-pragmatica-bold.woff") format("woff"), url("../fonts/ok-pragmatica-bold.ttf") format("truetype");
+  src: url("../fonts/ok-pragmatica-bold.woff2") format("woff2"), url("../fonts/ok-pragmatica-bold.woff") format("woff");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -185,6 +185,34 @@ h6 {
   }
   100% {
     transform: translateY(1) translate(0%, 0%);
+  }
+}
+@-webkit-keyframes fallingStar {
+  0% {
+    transform: translate(-500px, -500px);
+  }
+  40% {
+    transform: translate(-500px, -500px);
+  }
+  60% {
+    transform: translate(3500px, 3500px);
+  }
+  to {
+    transform: translate(3500px, 3500px);
+  }
+}
+@keyframes fallingStar {
+  0% {
+    transform: translate(-500px, -500px);
+  }
+  40% {
+    transform: translate(-500px, -500px);
+  }
+  60% {
+    transform: translate(3500px, 3500px);
+  }
+  to {
+    transform: translate(3500px, 3500px);
   }
 }
 .body {
@@ -1574,6 +1602,15 @@ h2.modal__title {
   z-index: 1;
   width: auto;
   height: auto;
+  left: 0%;
+  top: 0%;
+  -webkit-animation: fallingStar 10s linear infinite 0s;
+          animation: fallingStar 10s linear infinite 0s;
+}
+.space-scene img.meteor:first-child {
+  left: 50%;
+  -webkit-animation: fallingStar 10s linear infinite 0.5s;
+          animation: fallingStar 10s linear infinite 0.5s;
 }
 .space-scene img.bg-head {
   width: 100%;
