@@ -16,7 +16,7 @@
   --modal-bg: linear-gradient(90deg, rgba(244, 219, 108, 1) 0%, rgba(255, 255, 255, 1) 50%, rgba(244, 219, 108, 1) 100%);
   --paragmatica: "Pragmatica regular";
   --paragmatica-bold: "Pragmatica bold";
-  --serif: "serif2";
+  --serif: "serif";
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -46,14 +46,7 @@
 @font-face {
   font-family: "serif";
   src: url("../fonts/serif.woff2") format("woff2"), url("../fonts/serif.woff") format("woff"), url("../fonts/serif.ttf") format("truetype");
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-}
-@font-face {
-  font-family: "serif2";
-  src: url("../fonts/serif2.woff2") format("woff2"), url("../fonts/serif2.woff") format("woff"), url("../fonts/serif2.ttf") format("truetype");
-  font-weight: 400;
+  font-weight: bold;
   font-style: italic;
   font-display: swap;
 }
