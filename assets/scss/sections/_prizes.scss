@@ -1,0 +1,19 @@
+.section--prizes {
+  z-index: 2;
+  text-align: center;
+  overflow: visible;
+  .section-container {
+    z-index: 2;
+  }
+}
+
+.yellow-gradient {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: -70px;
+  width: 100%;
+  height: calc(100% + 140px);
+  object-fit: fill;
+  transform: translate(-50%, 0%);
+}

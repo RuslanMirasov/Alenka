@@ -2,6 +2,7 @@
   display: block;
   position: relative;
   width: 100%;
+  z-index: 1;
   &.full {
     min-height: 100vh;
   }

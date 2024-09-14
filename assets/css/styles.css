@@ -296,6 +296,7 @@ h6 {
   display: block;
   position: relative;
   width: 100%;
+  z-index: 1;
 }
 .section.full {
   min-height: 100vh;
@@ -1772,9 +1773,14 @@ h2.modal__title {
   z-index: 2;
 }
 .space-scene img.bg-lines {
-  position: relative;
   -o-object-fit: fill;
      object-fit: fill;
+}
+@media screen and (max-width: 1023px) {
+  .space-scene img.bg-lines {
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
 }
 .space-scene img.meteor {
   z-index: 1;
@@ -2095,4 +2101,24 @@ h2.modal__title {
   .rules li .button {
     bottom: -25px;
   }
+}
+.section--prizes {
+  z-index: 2;
+  text-align: center;
+  overflow: visible;
+}
+.section--prizes .section-container {
+  z-index: 2;
+}
+
+.yellow-gradient {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: -70px;
+  width: 100%;
+  height: calc(100% + 140px);
+  -o-object-fit: fill;
+     object-fit: fill;
+  transform: translate(-50%, 0%);
 }

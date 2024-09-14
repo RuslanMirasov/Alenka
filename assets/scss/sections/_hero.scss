@@ -142,8 +142,11 @@
     object-fit: cover;
     z-index: 2;
     &.bg-lines {
-      position: relative;
+      // position: relative;
       object-fit: fill;
+      @media screen and (max-width: 1023px) {
+        object-fit: cover;
+      }
     }
     &.meteor {
       z-index: 1;
