@@ -63,26 +63,6 @@
     width: 100%;
     padding-top: 100%;
   }
-  .heroImageScene {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0px;
-    top: 0px;
-    transform: rotate(11deg);
-    img {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      left: 0px;
-      top: 0px;
-      user-select: none;
-      &.animated {
-        top: 4%;
-        animation: moveUpDown 3s ease-in-out infinite;
-      }
-    }
-  }
 }
 
 .promo-title {

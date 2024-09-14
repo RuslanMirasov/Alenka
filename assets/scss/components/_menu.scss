@@ -94,14 +94,19 @@
 
   .menu__list {
     display: flex;
+    flex-wrap: wrap;
     margin: 0 auto;
     max-width: 200px;
     width: 100%;
-    flex-wrap: wrap;
     li {
       text-align: center;
       width: 100%;
       z-index: 1;
+      &:last-child {
+        @media screen and (min-width: 768px) {
+          display: none;
+        }
+      }
       .menu__link {
         display: block;
         position: relative;
@@ -120,7 +125,7 @@
 /*DESCTOP*/
 @media screen and (min-width: 1024px) {
   .menu__list {
-    display: inline-flex;
+    display: flex;
     flex-wrap: wrap;
     @media screen and (min-width: 1280px) {
       gap: 32px;
@@ -129,12 +134,9 @@
       gap: 20px;
     }
     > li {
-      position: relative;
-      display: inline-flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      z-index: 1;
+      &:last-child {
+        display: none;
+      }
       > .menu__link {
         display: inline-block;
         position: relative;

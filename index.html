@@ -42,7 +42,7 @@
             <nav class="menu">
               <menu class="menu__list">
                 <li><a href="#" class="menu__link" data-scrollto="section--hero">История</a></li>
-                <li><a href="#" class="menu__link" data-scrollto="section--hero">Правила</a></li>
+                <li><a href="#" class="menu__link" data-scrollto="section--rules">Правила</a></li>
                 <li><a href="#" class="menu__link" data-scrollto="section--prizes">Призы</a></li>
                 <li><a href="#" class="menu__link" data-scrollto="section--test">Тест</a></li>
                 <li><a href="#" class="menu__link" data-scrollto="section--winners">Победители</a></li>
@@ -77,17 +77,68 @@
 
     <main class="main">
       <!--Section--HERO-->
-      <section class="section section--hero full">
+      <section class="section section--hero">
         <div class="space-scene">
           <img src="./assets/img/hero/meteor.png" alt="Падающая звезда" class="meteor" />
           <img src="./assets/img/hero/meteor.png" alt="Падающая звезда" class="meteor" />
           <img src="./assets/img/svg/promo_bg.svg" alt="Фоновые линии" class="bg-lines" />
         </div>
         <div class="section-container">
-          <h1>Привет</h1>
+          <div class="hero">
+            <div class="hero__text">
+              <a href="#" target="_blank" class="magnet-logo">
+                <img src="./assets/img/svg/magnet.svg" alt="Логотип Алёнка" />
+              </a>
+
+              <h1 class="title title--h1">Отправляйся в космическую одиссею с Алёнкой</h1>
+              <p class="subtitle">Создай свой межпланетный аватар с новым вкусом шоколада Алёнка</p>
+            </div>
+            <div class="hero__image">
+              <div class="hero__image-wrapper cube">
+                <div class="heroImageScene">
+                  <img src="./assets/img/hero/alenka.png" alt="Алёнка" class="animated" />
+                  <img src="./assets/img/hero/alenka_bg.png" alt="Алёнка" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="#" data-scrollto="section--rules" class="scroll-down">
+            <img src="./assets/img/gif/arrow.gif" alt="Логотип Алёнка" />
+          </a>
         </div>
+
+        <div class="section-container section--rules">
+          <ul class="rules">
+            <li>
+              <h3 class="title title--h3">Купи</h3>
+              <p>в сети Магнит новый вкус шоколада Алёнка «Взрывная карамель»</p>
+            </li>
+            <li>
+              <h3 class="title title--h3">Посмотри</h3>
+              <p>историю Алёнки в космосе</p>
+            </li>
+            <li>
+              <h3 class="title title--h3">Узнай</h3>
+              <p>кто ты из шоколадной вселенной «Взрывная карамель»!</p>
+            </li>
+            <li>
+              <h3 class="title title--h3">Регистрируй</h3>
+              <p>чеки на сайте и выигрывай ценные призы каждую неделю</p>
+              <button type="button" class="button" data-modal="сheque">Загрузить чек</button>
+            </li>
+            <li>
+              <h3 class="title title--h3">Получи</h3>
+              <p>шанс выиграть главный приз</p>
+            </li>
+          </ul>
+        </div>
+
         <div class="planet planet--small cube">
           <img src="./assets/img/hero/planet_small.png" alt="Алёнка" />
+        </div>
+
+        <div class="planet planet--big cube">
+          <img src="./assets/img/hero/planet_big.png" alt="Алёнка" />
         </div>
       </section>
 
@@ -100,6 +151,10 @@
 
       <!--Section--TEST-->
       <section class="section section--test full" style="padding: 100px 0px">
+        <div class="space-scene">
+          <img src="./assets/img/hero/meteor.png" alt="Падающая звезда" class="meteor" />
+          <img src="./assets/img/hero/meteor.png" alt="Падающая звезда" class="meteor" />
+        </div>
         <div class="section-container">
           <h2>Test</h2>
         </div>
