@@ -17,36 +17,6 @@
   }
 }
 
-.promo-backgrounds {
-  display: block;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  img {
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    &.stars {
-      opacity: 0.5;
-    }
-    &.space {
-      opacity: 0.5;
-    }
-    &.bg-head {
-      position: relative !important;
-      width: 100%;
-      height: auto;
-      object-fit: contain;
-    }
-  }
-}
-
 .promo-logo {
   position: absolute;
   top: 15px;
@@ -271,7 +241,7 @@
   .promo-logo {
     position: relative;
     left: 50%;
-    transform: translate(-110%, 0%);
+    transform: translate(-100%, 0%);
     top: 0px;
     width: 130px;
     margin-bottom: -56px;
@@ -279,15 +249,11 @@
 
   .promo .magnet {
     width: 98px;
-    margin-left: 0px;
     left: 50%;
-    margin-left: 10px;
+    margin-left: 26px;
     margin-top: 15px;
   }
 
-  .promo-backgrounds img.bg-head {
-    display: none;
-  }
   .promo {
     max-width: 400px;
     justify-content: center;

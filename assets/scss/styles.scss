@@ -18,7 +18,14 @@
 
   --paragmatica: 'Pragmatica regular';
   --paragmatica-bold: 'Pragmatica bold';
-  --serif: 'ITC Officina Serif Std';
+  // --serif: 'ITC Officina Serif Std';
+  --serif: 'serif';
+  // --serif: 'serif2';
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 //Basics

@@ -83,3 +83,18 @@
     }
   }
 }
+
+.header__rocket {
+  position: absolute;
+  width: 120px;
+  right: 24px;
+  left: 100%;
+  transform: translate(-100%, -20px);
+  margin-left: -24px;
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+  @media screen and (max-width: 850px) {
+    display: none;
+  }
+}
