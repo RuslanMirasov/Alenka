@@ -938,6 +938,7 @@ h6 {
   z-index: 1;
   background: var(--modal-bg-radial);
   opacity: 0.5;
+  border-radius: 46px;
 }
 .modal > * {
   z-index: 2;
