@@ -2485,6 +2485,10 @@ h2.modal__title {
   max-width: 100%;
   width: 100%;
 }
+.step__actions .form .file-reset {
+  right: 20px;
+  top: 20px;
+}
 .step__actions .form .download-file {
   width: 100%;
   height: 400px;

@@ -2,9 +2,8 @@ const inputs = document.querySelectorAll('.input');
 const agreeCheckboces = document.querySelectorAll('[data-agree]');
 
 //input file varibles
-const labelForFile = document.querySelector('.label-for-file');
-const downloadFile = document.querySelector('.download-file');
-const inputFile = document.querySelector('.input-file');
+const labelsForFile = document.querySelectorAll('.label-for-file');
+const inputsFile = document.querySelectorAll('.input-file');
 const validFormats = ['image/jpeg', 'image/png', 'image/gif', 'image/webp', 'image/bmp', 'image/tiff'];
 
 inputs.forEach(input => {
@@ -32,27 +31,37 @@ agreeCheckboces.forEach(input => {
 
 // INPUT TYPE FILE
 
-labelForFile.addEventListener('dragover', function (event) {
-  event.preventDefault();
+labelsForFile.forEach(fileLabel => {
+  fileLabel.addEventListener('dragover', function (event) {
+    event.preventDefault();
+  });
 });
 
-labelForFile.addEventListener('drop', function (event) {
-  event.preventDefault();
-  handleFile(event.dataTransfer.files[0]);
+labelsForFile.forEach(fileLabel => {
+  fileLabel.addEventListener('drop', function (event) {
+    event.preventDefault();
+    handleFile(event.dataTransfer.files[0], fileLabel);
+  });
 });
 
-inputFile.addEventListener('change', function (event) {
-  handleFile(event.target.files[0]);
+inputsFile.forEach(input => {
+  input.addEventListener('change', function (event) {
+    const label = event.target.closest('.label-for-file');
+    handleFile(event.target.files[0], label);
+  });
 });
 
-const handleFile = file => {
+const handleFile = (file, label) => {
+  const labelDefaultText = label.querySelector('.label__text').dataset.text;
+  const inputFile = label.querySelector('.input-file');
+  const downloadFile = label.closest('.download-file');
   if (file) {
     if (validFormats.includes(file.type)) {
       const reader = new FileReader();
       reader.onload = function (e) {
-        labelForFile.classList.add('loaded');
-        labelForFile.style.setProperty('--uploaded-image', `url(${e.target.result})`);
-        labelForFile.style.background = `#ffffff url(${e.target.result}) no-repeat center center/cover`;
+        label.classList.add('loaded');
+        label.style.setProperty('--uploaded-image', `url(${e.target.result})`);
+        label.style.background = `#ffffff url(${e.target.result}) no-repeat center center/cover`;
 
         // Добавляем кнопку сброса после загрузки изображения
         const existingResetButton = downloadFile.querySelector('.file-reset');
@@ -64,10 +73,9 @@ const handleFile = file => {
 
           // Обработчик для кнопки сброса
           resetButton.addEventListener('click', function () {
-            labelForFile.classList.remove('loaded');
-            labelForFile.style.background = '';
-            labelForFile.querySelector('.label__text').innerHTML =
-              'Перетащите фото чека или нажмите для выбора';
+            label.classList.remove('loaded');
+            label.style.background = '';
+            label.querySelector('.label__text').innerHTML = labelDefaultText;
 
             // Сбрасываем значение input и удаляем кнопку
             inputFile.value = '';
@@ -77,8 +85,8 @@ const handleFile = file => {
       };
       reader.readAsDataURL(file);
     } else {
-      labelForFile.querySelector('.label__text').innerHTML = `
-        <span class="error">Неверный формат файла!<br/>Допустимые форматы: JPG, PNG, GIF, WEBP, BMP, TIFF</span>`;
+      label.querySelector('.label__text').innerHTML = `
+        <span class="error">Не верный формат файла!`;
     }
   }
 };

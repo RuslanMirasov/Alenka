@@ -88,7 +88,7 @@
                 <img src="./assets/img/svg/magnet.svg" alt="Логотип Алёнка" />
               </a>
 
-              <h1 class="title title--h1">Отправляйся в космическую одиссею с Алёнкой</h1>
+              <h1 class="title title--h1">Отправляйся <br />в космическую одиссею с Алёнкой</h1>
               <p class="subtitle">Создай свой межпланетный аватар с новым вкусом шоколада Алёнка</p>
             </div>
             <div class="hero__image">
@@ -268,6 +268,31 @@
                 </div>
 
                 <!--SUBSTEP 2-->
+                <div class="step" data-js="substep-1">
+                  <div class="step__text">
+                    <h3 class="title">Загрузи свою фотографию и узнай кто ты из вселенной «Взрывная карамель»</h3>
+                  </div>
+                  <div class="step__actions">
+                    <form action="#" method="POST" class="form" enctype="multipart/form-data" novalidate>
+                      <div class="download-file">
+                        <label class="label-for-file">
+                          <input type="file" name="сheque" class="input-file" />
+                          <img src="./assets/img/form/file.png" alt="Алёнка" />
+                          <p class="label__text" data-text="перетащите фото в это поле">перетащите фото в это поле</p>
+                        </label>
+                      </div>
+                      <button type="submit" class="button button--biege full">Сгенерировать</button>
+                    </form>
+                  </div>
+                  <div class="step__text">
+                    <p>
+                      Лимит на количество образов 5 штук. Пожалуйста, убедись, что на фотографии именно ты, лицо не перекрыто и повёрнуто на камеру.
+                    </p>
+                    <b>израсходовано 3/5 попыток</b>
+                  </div>
+                </div>
+
+                <!--SUBSTEP 3-->
                 <div class="step active visible" data-js="substep-1">
                   <div class="step__text">
                     <h3 class="title">Загрузи свою фотографию и узнай кто ты из вселенной «Взрывная карамель»</h3>
@@ -484,7 +509,7 @@
               <label class="label-for-file">
                 <input type="file" name="сheque" class="input-file" />
                 <img src="./assets/img/svg/plus.svg" alt="Алёнка" />
-                <p class="label__text">Перетащите фото чека или нажмите для выбора</p>
+                <p class="label__text" data-text="Перетащите фото чека или нажмите для выбора">Перетащите фото чека или нажмите для выбора</p>
               </label>
             </div>
             <button type="submit" class="button button--submit">Загрузить</button>
