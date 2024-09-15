@@ -917,6 +917,7 @@ h6 {
   transform: translate(0px, 20px);
   transition: opacity 0.3s, transform 0.3s;
   background: var(--modal-bg);
+  z-index: 1;
 }
 .modal.active {
   display: flex;
@@ -1140,6 +1141,7 @@ h2.modal__title {
   font-size: 14px;
   color: #555555;
   outline: none;
+  z-index: 1;
 }
 .input::-moz-placeholder {
   color: #a5a5a5;
@@ -1570,6 +1572,7 @@ h2.modal__title {
   width: 120px;
   height: 82px;
   border-radius: 16px;
+  z-index: 1;
   padding: 12px;
   background: var(--white);
 }
@@ -1652,6 +1655,7 @@ h2.modal__title {
     width: 90px;
     height: 60px;
     border-radius: 12px;
+    z-index: 1;
     padding: 8px;
   }
   .date-counter li span {
@@ -2070,6 +2074,7 @@ h2.modal__title {
   color: var(--brown);
   text-align: center;
   counter-reset: item;
+  z-index: 1;
 }
 .rules li {
   position: relative;
@@ -2309,6 +2314,7 @@ h2.modal__title {
   padding: 20px;
   max-width: 500px;
   margin: 0 auto;
+  z-index: 1;
 }
 @media screen and (max-width: 767px) {
   .prize {

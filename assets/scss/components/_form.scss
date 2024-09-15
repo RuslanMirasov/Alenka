@@ -63,6 +63,7 @@
   font-size: 14px;
   color: #555555;
   outline: none;
+  z-index: 1;
   &::placeholder {
     color: #a5a5a5;
     transition: 0.3s;

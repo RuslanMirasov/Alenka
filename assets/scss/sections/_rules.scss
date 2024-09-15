@@ -19,6 +19,7 @@
   color: var(--brown);
   text-align: center;
   counter-reset: item;
+  z-index: 1;
   li {
     position: relative;
     width: calc((100% - 4 * 50px) / 5);
