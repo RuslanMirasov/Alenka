@@ -11,7 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
     link.addEventListener('click', function (e) {
       e.preventDefault();
       const target = `.${this.dataset.scrollto}`;
-      const distance = document.querySelector(target).offsetTop - refs.header.getBoundingClientRect().height;
+      const rect = document.querySelector(target).getBoundingClientRect();
+      const distance = rect.top + window.scrollY - refs.header.getBoundingClientRect().height;
       window.scrollTo({ top: distance, left: 0, behavior: 'smooth' });
     });
   });

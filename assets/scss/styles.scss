@@ -3,6 +3,7 @@
   --biege: #f4db6c;
   --biege-dark: #fdda52;
   --red: #d30e14;
+  --button-hover: #af252a;
   --invalid: #d30e14;
   --blue-dark: #27007a;
   --black: #000000;
@@ -43,12 +44,14 @@
 @import './components/modal';
 @import './components/form';
 @import './components/runText';
+@import './components/planet';
 
 //Sections
 @import './sections/promo';
 @import './sections/hero';
 @import './sections/rules';
 @import './sections/prizes';
+@import './sections/test';
 
 // @media screen and (min-width: 1366px) {
 //   min-width: 196px;
