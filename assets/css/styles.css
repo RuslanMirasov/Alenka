@@ -163,6 +163,21 @@ h6 {
   font-size: 30px;
   line-height: 1.2;
 }
+@media screen and (max-width: 1365px) {
+  .title.title--h3 {
+    font-size: 28px;
+  }
+}
+@media screen and (max-width: 1279px) {
+  .title.title--h3 {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .title.title--h3 {
+    font-size: 30px;
+  }
+}
 
 .subtitle {
   font-size: 36px;
@@ -614,7 +629,7 @@ h6 {
     overflow-x: hidden;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
-    padding: 40px 20px;
+    padding: 20px 20px 70px 20px;
   }
   .menu__list {
     display: flex;
@@ -775,6 +790,16 @@ h6 {
   height: 62px;
   font-size: 22px;
   font-family: var(--serif);
+}
+@media screen and (max-width: 767px) {
+  .button.button--big {
+    font-size: 18px;
+  }
+  .button.button--big img,
+.button.button--big svg,
+.button.button--big picture {
+    width: 20px;
+  }
 }
 .button.button--biege {
   background: var(--biege);
@@ -2111,9 +2136,29 @@ h2.modal__title {
   text-align: center;
   overflow: visible;
   color: var(--brown);
+  background: url("../img/gif/starsBg.gif") repeat-y center top/cover;
 }
 .section--prizes .section-container {
   z-index: 2;
+}
+.section--prizes .button {
+  position: relative;
+  bottom: -55px;
+}
+@media screen and (max-width: 1279px) {
+  .section--prizes .button {
+    bottom: -65px;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .section--prizes .button {
+    bottom: -55px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .section--prizes .button {
+    bottom: -45px;
+  }
 }
 
 .yellow-gradient {
@@ -2127,6 +2172,25 @@ h2.modal__title {
      object-fit: fill;
   transform: translate(-50%, 0%);
 }
+@media screen and (max-width: 1023px) {
+  .yellow-gradient {
+    top: -50px;
+    height: calc(100% + 100px);
+  }
+}
+@media screen and (max-width: 767px) {
+  .yellow-gradient {
+    top: -30px;
+    height: calc(100% + 60px);
+  }
+}
+.yellow-gradient img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
 
 .prizes {
   display: flex;
@@ -2134,7 +2198,7 @@ h2.modal__title {
   justify-content: center;
   align-items: flex-end;
   align-content: flex-end;
-  margin: 30px 0px;
+  margin-top: 30px;
 }
 .prizes .title {
   text-transform: uppercase;
@@ -2143,15 +2207,32 @@ h2.modal__title {
 .prizes__primary {
   width: 25%;
 }
+@media screen and (max-width: 1023px) {
+  .prizes__primary {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+}
 .prizes__primary .prize {
   background: var(--white);
+  padding-top: 40px;
+}
+@media screen and (max-width: 767px) {
+  .prizes__primary .prize {
+    padding-bottom: 30px;
+  }
 }
 
 .prize__list {
   width: 75%;
 }
+@media screen and (max-width: 1023px) {
+  .prize__list {
+    width: 100%;
+  }
+}
 .prize__list > .title {
-  margin-bottom: -20px;
+  font-size: 32px;
 }
 .prize__list ul {
   display: flex;
@@ -2163,19 +2244,70 @@ h2.modal__title {
 .prize__list ul li {
   width: 33.333333%;
 }
+@media screen and (max-width: 1023px) {
+  .prize__list ul li {
+    width: 100%;
+  }
+}
 
 .prize {
   border-radius: 46px;
   padding: 20px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+@media screen and (max-width: 767px) {
+  .prize {
+    padding-bottom: 0px;
+  }
+}
+.prize .prize__image {
+  max-width: 300px;
+  margin: 0 auto;
 }
 .prize h4.title {
-  margin-top: -10px;
+  margin-top: -20px;
   margin-bottom: 20px;
   min-height: 72px;
   color: var(--red);
+}
+@media screen and (max-width: 1365px) {
+  .prize h4.title {
+    min-height: 67.19px;
+    margin-bottom: 10px;
+  }
+}
+@media screen and (max-width: 1279px) {
+  .prize h4.title {
+    min-height: 48px;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .prize h4.title {
+    font-size: 30px;
+    min-height: 1px;
+  }
 }
 .prize p {
   font-size: 15px;
   line-height: 1.125;
   min-height: 64.5px;
+}
+@media screen and (max-width: 1365px) {
+  .prize p {
+    font-size: 14px;
+    min-height: 63px;
+  }
+}
+@media screen and (max-width: 1279px) {
+  .prize p {
+    font-size: 11px;
+    min-height: 54px;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .prize p {
+    font-size: 16px;
+    min-height: 1px;
+  }
 }

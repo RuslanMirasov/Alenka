@@ -51,6 +51,14 @@
     height: 62px;
     font-size: 22px;
     font-family: var(--serif);
+    @media screen and (max-width: 767px) {
+      font-size: 18px;
+      img,
+      svg,
+      picture {
+        width: 20px;
+      }
+    }
   }
 
   &.button--biege {

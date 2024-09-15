@@ -152,7 +152,12 @@
 
       <!--Section--PRIZES-->
       <section class="section section--prizes">
-        <img src="./assets/img/svg/bg.svg" alt="Желтый градиент" class="yellow-gradient" />
+        <picture class="yellow-gradient">
+          <source media="(min-width:1024px)" srcset="./assets/img/svg/bg.svg" />
+          <source media="(max-width:1023px)" srcset="./assets/img/svg/bg_mobil.svg" />
+          <img src="./assets/img/svg/bg_mobil.svg" alt="Желтый градиент" />
+        </picture>
+        <!-- <img src="./assets/img/svg/bg.svg" alt="Желтый градиент" class="yellow-gradient" /> -->
         <div class="section-container">
           <div class="prizes">
             <div class="prizes__primary">
@@ -162,7 +167,7 @@
                   <img src="./assets/img/prizes/1.png" alt="Приз" />
                 </div>
                 <h4 class="title title--h3">Телескоп</h4>
-                <p>В прямом эфире будут выбраны 3 победителя среди зарегистрировавших чеки за всю кампанию</p>
+                <p>В прямом эфире будут выбраны <br />3 победителя среди зарегистрировавших чеки <br />за всю кампанию</p>
               </article>
             </div>
 
@@ -201,6 +206,11 @@
                 </li>
               </ul>
             </div>
+
+            <button type="button" data-modal="сheque" class="button button--big">
+              <span>ЗАРЕГИСТРИРОВАТЬ ЧЕК</span>
+              <img src="./assets/img/svg/arr-right.svg" alt="arrow" />
+            </button>
           </div>
         </div>
       </section>
