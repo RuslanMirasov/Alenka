@@ -259,10 +259,36 @@
 
               <!--STEP 3-->
               <div class="step active visible" data-js="step-3">
-                <div class="step step--substep active visible">
+                <!--SUBSTEP 1-->
+                <div class="step" data-js="substep-1">
                   <div class="step__text full">
                     <h3 class="title">Зарегистрируйся для того чтобы узнать кто ты из шоколадной вселенной «Взрывная карамель»!</h3>
-                    <button type="button" class="button button--biege">Зарегистрироваться</button>
+                    <button type="button" class="button button--biege" data-modal="registration">Зарегистрироваться</button>
+                  </div>
+                </div>
+
+                <!--SUBSTEP 2-->
+                <div class="step active visible" data-js="substep-1">
+                  <div class="step__text">
+                    <h3 class="title">Загрузи свою фотографию и узнай кто ты из вселенной «Взрывная карамель»</h3>
+                  </div>
+                  <div class="step__actions">
+                    <form action="#" method="POST" class="form" enctype="multipart/form-data" novalidate>
+                      <div class="download-file">
+                        <label class="label-for-file">
+                          <input type="file" name="сheque" class="input-file" />
+                          <img src="./assets/img/form/file.png" alt="Алёнка" />
+                          <p class="label__text" data-text="перетащите фото в это поле">перетащите фото в это поле</p>
+                        </label>
+                      </div>
+                      <button type="submit" class="button button--biege full">Сгенерировать</button>
+                    </form>
+                  </div>
+                  <div class="step__text">
+                    <p>
+                      Лимит на количество образов 5 штук. Пожалуйста, убедись, что на фотографии именно ты, лицо не перекрыто и повёрнуто на камеру.
+                    </p>
+                    <b>израсходовано 3/5 попыток</b>
                   </div>
                 </div>
               </div>
@@ -296,7 +322,6 @@
     </footer>
 
     <!-- MODALS -->
-
     <div class="backdrop">
       <div class="modals">
         <!-- LOGIN MODAL-->
@@ -381,23 +406,14 @@
           <ul class="modal__list">
             <li>
               <img src="./assets/img/svg/list1.svg" alt="Алёнка" />
-              <!-- <svg>
-                <use href="./assets/img/icons.svg#list1"></use>
-              </svg> -->
               <p>Нажмите «Загрузить»</p>
             </li>
             <li>
               <img src="./assets/img/svg/list2.svg" alt="Алёнка" />
-              <!-- <svg>
-                <use href="./assets/img/icons.svg#list1"></use>
-              </svg> -->
               <p>Выберите фото чека</p>
             </li>
             <li>
               <img src="./assets/img/svg/list3.svg" alt="Алёнка" />
-              <!-- <svg>
-                <use href="./assets/img/icons.svg#list1"></use>
-              </svg> -->
               <p>Фото чека должно быть:</p>
               <ul>
                 <li>чётким</li>
@@ -407,9 +423,6 @@
             </li>
             <li>
               <img src="./assets/img/svg/list4.svg" alt="Алёнка" />
-              <!-- <svg>
-                <use href="./assets/img/icons.svg#list1"></use>
-              </svg> -->
               <p>Если фото окажется плохого качества, чек принят не будет</p>
             </li>
           </ul>

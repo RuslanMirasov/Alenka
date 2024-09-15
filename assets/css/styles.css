@@ -40,7 +40,7 @@
 }
 @font-face {
   font-family: "serif";
-  src: url("../fonts/serif.woff2") format("woff2"), url("../fonts/serif.woff") format("woff");
+  src: url("../fonts/OfficinaSerifBoldITC-Italic.woff2") format("woff2"), url("../fonts/OfficinaSerifBoldITC-Italic.woff") format("woff");
   font-weight: 400;
   font-style: italic;
   font-display: swap;
@@ -2395,12 +2395,13 @@ h2.modal__title {
   width: 100%;
   max-width: 1000px;
   margin: 40px auto;
-  min-height: 400px;
+  height: auto;
   border: 1px solid tomato;
 }
 
 .step {
   display: none;
+  width: 100%;
   position: relative;
   padding-left: 50px;
   color: var(--biege);
@@ -2409,8 +2410,11 @@ h2.modal__title {
   pointer-events: none;
   transition: opacity 0.3s;
 }
+.step > .step {
+  padding-left: 0px;
+}
 .step.active {
-  display: block;
+  display: inline-block;
 }
 .step.visible {
   opacity: 1;
@@ -2436,9 +2440,6 @@ h2.modal__title {
   width: 100%;
   max-width: 650px;
 }
-.step__text span {
-  color: var(--white);
-}
 .step__text h2 {
   font-size: 48px;
   line-height: 1;
@@ -2450,10 +2451,16 @@ h2.modal__title {
 .step__text b {
   font-size: 32px;
   line-height: 1;
+  font-family: var(--serif);
 }
 .step__text p {
   font-size: 24px;
   line-height: 1.2;
+  margin-top: 36px;
+}
+.step__text span,
+.step__text p {
+  color: var(--white);
 }
 
 .step__actions {
@@ -2466,4 +2473,39 @@ h2.modal__title {
   width: 44%;
   max-width: 400px;
   float: right;
+}
+.step__actions .form {
+  max-width: 100%;
+  width: 100%;
+}
+.step__actions .form .download-file {
+  width: 100%;
+  height: 400px;
+}
+.step__actions .form .label-for-file {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  border: 2px dashed var(--biege);
+  border-radius: 46px;
+  background-color: rgba(0, 0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+.step__actions .form .label-for-file:hover {
+  border: 2px dashed var(--white);
+}
+.step__actions .form .label-for-file .label__text {
+  margin: 0;
+  font-size: 24px;
+  color: #808080;
+}
+.step__actions .form .label-for-file img {
+  position: absolute;
+  width: 100px;
+  height: 90px;
 }
