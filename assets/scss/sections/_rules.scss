@@ -26,6 +26,7 @@
       content: counter(item, decimal-leading-zero);
       counter-increment: item;
       font-family: var(--serif);
+      font-style: oblique;
       font-size: 128px;
       line-height: 1;
       opacity: 0.1;

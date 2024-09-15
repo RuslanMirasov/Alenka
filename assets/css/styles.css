@@ -126,6 +126,7 @@ h6 {
   display: block;
   font-weight: 400;
   font-family: var(--serif);
+  font-style: oblique;
 }
 
 .title.title--h1 {
@@ -811,6 +812,7 @@ h6 {
   height: 62px;
   font-size: 22px;
   font-family: var(--serif);
+  font-style: oblique;
 }
 @media screen and (max-width: 767px) {
   .button.button--big {
@@ -1309,6 +1311,7 @@ h2.modal__title {
   position: relative;
   font-size: 200px;
   font-family: var(--serif);
+  font-style: oblique;
   line-height: 1;
   color: var(--biege);
   opacity: 0.2;
@@ -1577,6 +1580,7 @@ h2.modal__title {
 }
 .date-counter li p {
   font-family: var(--serif);
+  font-style: oblique;
   font-size: 48px;
   line-height: 1;
   color: var(--red);
@@ -2075,6 +2079,7 @@ h2.modal__title {
   content: counter(item, decimal-leading-zero);
   counter-increment: item;
   font-family: var(--serif);
+  font-style: oblique;
   font-size: 128px;
   line-height: 1;
   opacity: 0.1;
@@ -2387,6 +2392,7 @@ h2.modal__title {
   display: inline-block;
   color: var(--red);
   font-family: var(--serif);
+  font-style: oblique;
   font-size: 32px;
 }
 
@@ -2452,6 +2458,7 @@ h2.modal__title {
   font-size: 32px;
   line-height: 1;
   font-family: var(--serif);
+  font-style: oblique;
 }
 .step__text p {
   font-size: 24px;
