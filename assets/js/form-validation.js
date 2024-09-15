@@ -1,4 +1,3 @@
-import { popup } from './modal.js';
 const forms = document.querySelectorAll('.form');
 
 const regex = {
@@ -17,14 +16,39 @@ const errorMessages = {
 const addError = (labelEl, inputEl, errorEl, errorText) => {
   labelEl.classList.add('invalid');
   inputEl.classList.add('invalid');
-  if (!errorEl) {
-    const errorEl = document.createElement('span');
-    errorEl.setAttribute('class', 'error');
+  if (inputEl.type !== 'file') {
+    if (!errorEl) {
+      const errorEl = document.createElement('span');
+      errorEl.setAttribute('class', 'error');
+      errorEl.innerHTML = errorText;
+      labelEl.querySelector('.label__text').append(errorEl);
+      return;
+    }
     errorEl.innerHTML = errorText;
-    labelEl.querySelector('.label__text').append(errorEl);
     return;
   }
-  errorEl.innerHTML = errorText;
+  labelEl.classList.remove('loaded');
+  labelEl.style.background = '';
+  const resetButton = labelEl.closest('.download-file').querySelector('.file-reset');
+  if (resetButton) {
+    resetButton.remove();
+  }
+  inputEl.value = '';
+};
+
+const resetAllForms = () => {
+  forms.forEach(form => {
+    form.reset();
+    const fileLabel = form.querySelector('.label-for-file');
+    if (fileLabel) {
+      fileLabel.classList.remove('loaded');
+      fileLabel.style.background = '';
+      const resetButton = fileLabel.closest('.download-file').querySelector('.file-reset');
+      if (resetButton) {
+        resetButton.remove();
+      }
+    }
+  });
 };
 
 // INPUT VALIDATION
@@ -64,15 +88,19 @@ const formValidation = form => {
   return errors === 0;
 };
 
-// ON SUBMIT FUNCTION
-const handleSubmit = e => {
+// ON ALL FORMS SUBMIT FUNCTION
+export const validateForm = (e, sendForm) => {
   e.preventDefault();
   const isFormValid = formValidation(e.target);
   if (!isFormValid) {
     return;
   }
-  e.target.reset();
-  popup('confirm-password');
+  if (typeof sendForm === 'function') {
+    sendForm(e);
+    resetAllForms();
+  }
 };
 
-forms.forEach(form => form.addEventListener('submit', handleSubmit));
+forms.forEach(form => form.addEventListener('submit', validateForm));
+
+window.validateForm = validateForm;

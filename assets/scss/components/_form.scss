@@ -165,6 +165,12 @@
   position: relative;
   z-index: 1;
   cursor: pointer;
+  &.invalid {
+    border: 6px solid var(--invalid);
+  }
+  &.loaded {
+    border: 6px solid var(--biege-dark);
+  }
 }
 
 .input-file {

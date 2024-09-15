@@ -1,23 +1,28 @@
 const inputs = document.querySelectorAll('.input');
-const agreeCheckboces = document.querySelectorAll('[data-agree]');
+const agreeCheckboxes = document.querySelectorAll('[data-agree]');
 
 //input file varibles
 const labelsForFile = document.querySelectorAll('.label-for-file');
 const inputsFile = document.querySelectorAll('.input-file');
 const validFormats = ['image/jpeg', 'image/png', 'image/gif', 'image/webp', 'image/bmp', 'image/tiff'];
 
+const handleInvalidClassRemove = e => {
+  const input = e.target;
+  const label = input.closest('label');
+  if (label) {
+    label.classList.remove('invalid');
+  }
+  input.classList.remove('invalid');
+};
+
 inputs.forEach(input => {
-  input.addEventListener('focus', e => {
-    const input = e.target;
-    const label = input.closest('label');
-    if (label) {
-      label.classList.remove('invalid');
-    }
-    input.classList.remove('invalid');
-  });
+  input.addEventListener('focus', handleInvalidClassRemove);
+  if (input.type === 'file') {
+    input.addEventListener('input', handleInvalidClassRemove);
+  }
 });
 
-agreeCheckboces.forEach(input => {
+agreeCheckboxes.forEach(input => {
   input.addEventListener('change', e => {
     const agree = e.target;
     const submitButton = agree.closest('form').querySelector('.button--submit');
@@ -31,19 +36,19 @@ agreeCheckboces.forEach(input => {
 
 // INPUT TYPE FILE
 
+// Обработчики для dragover и drop событий
 labelsForFile.forEach(fileLabel => {
   fileLabel.addEventListener('dragover', function (event) {
     event.preventDefault();
   });
-});
 
-labelsForFile.forEach(fileLabel => {
   fileLabel.addEventListener('drop', function (event) {
     event.preventDefault();
     handleFile(event.dataTransfer.files[0], fileLabel);
   });
 });
 
+// Обработчик изменения файлового input
 inputsFile.forEach(input => {
   input.addEventListener('change', function (event) {
     const label = event.target.closest('.label-for-file');
@@ -51,9 +56,10 @@ inputsFile.forEach(input => {
   });
 });
 
+// Функция обработки файла
 const handleFile = (file, label) => {
-  const labelDefaultText = label.querySelector('.label__text').dataset.text;
-  const inputFile = label.querySelector('.input-file');
+  // const labelDefaultText = label.querySelector('.label__text').dataset.text;
+  // const inputFile = label.querySelector('.input-file');
   const downloadFile = label.closest('.download-file');
   if (file) {
     if (validFormats.includes(file.type)) {
@@ -73,23 +79,98 @@ const handleFile = (file, label) => {
 
           // Обработчик для кнопки сброса
           resetButton.addEventListener('click', function () {
-            label.classList.remove('loaded');
-            label.style.background = '';
-            label.querySelector('.label__text').innerHTML = labelDefaultText;
-
-            // Сбрасываем значение input и удаляем кнопку
-            inputFile.value = '';
-            resetButton.remove();
+            resetFile(label);
           });
         }
       };
       reader.readAsDataURL(file);
     } else {
-      label.querySelector('.label__text').innerHTML = `
-        <span class="error">Не верный формат файла!`;
+      label.querySelector('.label__text').innerHTML = `<span class="error">Не верный формат файла!</span>`;
     }
+  } else {
+    // Если файл не выбран или удален, вызываем сброс состояния
+    resetFile(label);
   }
 };
+
+// Функция сброса состояния поля файла
+const resetFile = label => {
+  const inputFile = label.querySelector('.input-file');
+  const downloadFile = label.closest('.download-file');
+  const labelDefaultText = label.querySelector('.label__text').dataset.text;
+
+  label.classList.remove('loaded');
+  label.style.background = '';
+  label.querySelector('.label__text').innerHTML = labelDefaultText;
+
+  // Сбрасываем значение input и удаляем кнопку
+  inputFile.value = '';
+  const resetButton = downloadFile.querySelector('.file-reset');
+  if (resetButton) {
+    resetButton.remove();
+  }
+};
+
+// labelsForFile.forEach(fileLabel => {
+//   fileLabel.addEventListener('dragover', function (event) {
+//     event.preventDefault();
+//   });
+// });
+
+// labelsForFile.forEach(fileLabel => {
+//   fileLabel.addEventListener('drop', function (event) {
+//     event.preventDefault();
+//     handleFile(event.dataTransfer.files[0], fileLabel);
+//   });
+// });
+
+// inputsFile.forEach(input => {
+//   input.addEventListener('change', function (event) {
+//     const label = event.target.closest('.label-for-file');
+//     handleFile(event.target.files[0], label);
+//   });
+// });
+
+// const handleFile = (file, label) => {
+//   const labelDefaultText = label.querySelector('.label__text').dataset.text;
+//   const inputFile = label.querySelector('.input-file');
+//   const downloadFile = label.closest('.download-file');
+//   if (file) {
+//     if (validFormats.includes(file.type)) {
+//       const reader = new FileReader();
+//       reader.onload = function (e) {
+//         label.classList.add('loaded');
+//         label.style.setProperty('--uploaded-image', `url(${e.target.result})`);
+//         label.style.background = `#ffffff url(${e.target.result}) no-repeat center center/cover`;
+
+//         // Добавляем кнопку сброса после загрузки изображения
+//         const existingResetButton = downloadFile.querySelector('.file-reset');
+//         if (!existingResetButton) {
+//           const resetButton = document.createElement('button');
+//           resetButton.type = 'button';
+//           resetButton.classList.add('file-reset');
+//           downloadFile.appendChild(resetButton);
+
+//           // Обработчик для кнопки сброса
+//           resetButton.addEventListener('click', function () {
+//             fileLabelReset(label);
+//             label.classList.remove('loaded');
+//             label.style.background = '';
+//             label.querySelector('.label__text').innerHTML = labelDefaultText;
+
+//             // Сбрасываем значение input и удаляем кнопку
+//             inputFile.value = '';
+//             resetButton.remove();
+//           });
+//         }
+//       };
+//       reader.readAsDataURL(file);
+//     } else {
+//       label.querySelector('.label__text').innerHTML = `
+//         <span class="error">Не верный формат файла!`;
+//     }
+//   }
+// };
 
 // PHONE MASK
 

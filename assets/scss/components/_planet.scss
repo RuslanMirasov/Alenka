@@ -44,6 +44,30 @@
     }
   }
 
+  &.planet--medium {
+    width: 275px;
+    left: 0px;
+    bottom: 0px;
+    transform: translate(-25%, -200px);
+    @media screen and (max-width: 1439px) {
+      transform: translate(-40%, -200px);
+    }
+    @media screen and (max-width: 1365px) {
+      transform: translate(-50%, -200px);
+    }
+    @media screen and (max-width: 1279px) {
+      width: 98px;
+    }
+    @media screen and (max-width: 767px) {
+      bottom: auto;
+      top: 140px;
+      transform: translate(-25%, 0px);
+    }
+    img {
+      animation: moveUpDown 4s ease-in-out infinite;
+    }
+  }
+
   &.planet--saturn {
     position: absolute;
     width: 570px;
@@ -51,8 +75,18 @@
     top: 0px;
     transform: translate(25%, 0px);
     z-index: 500;
+    @media screen and (max-width: 1439px) {
+      width: 470px;
+    }
+    @media screen and (max-width: 1365px) {
+      width: 400px;
+    }
+    @media screen and (max-width: 1279px) {
+      width: 296px;
+    }
     @media screen and (max-width: 767px) {
       width: 296px;
+      transform: translate(40%, 10px);
     }
     img {
       animation: moveUpDown 6s ease-in-out infinite;
@@ -69,4 +103,14 @@
   margin-bottom: -470px;
   pointer-events: none;
   overflow: hidden;
+  @media screen and (max-width: 1439px) {
+    height: 470px;
+    margin-top: -70px;
+    margin-bottom: -400px;
+  }
+  @media screen and (max-width: 767px) {
+    height: 340px;
+    margin-top: 0px;
+    margin-bottom: -340px;
+  }
 }

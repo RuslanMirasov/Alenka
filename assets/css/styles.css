@@ -153,7 +153,7 @@ h6 {
 }
 @media screen and (max-width: 767px) {
   .title.title--h2 {
-    font-size: 40px;
+    font-size: 24px;
   }
   .title.title--h2 strong {
     font-size: 34px;
@@ -1259,6 +1259,12 @@ h2.modal__title {
   z-index: 1;
   cursor: pointer;
 }
+.label-for-file.invalid {
+  border: 6px solid var(--invalid);
+}
+.label-for-file.loaded {
+  border: 6px solid var(--biege-dark);
+}
 
 .input-file {
   display: none;
@@ -1449,6 +1455,38 @@ h2.modal__title {
   -webkit-animation: moveUpDown 6s ease-in-out infinite;
           animation: moveUpDown 6s ease-in-out infinite;
 }
+.planet.planet--medium {
+  width: 275px;
+  left: 0px;
+  bottom: 0px;
+  transform: translate(-25%, -200px);
+}
+@media screen and (max-width: 1439px) {
+  .planet.planet--medium {
+    transform: translate(-40%, -200px);
+  }
+}
+@media screen and (max-width: 1365px) {
+  .planet.planet--medium {
+    transform: translate(-50%, -200px);
+  }
+}
+@media screen and (max-width: 1279px) {
+  .planet.planet--medium {
+    width: 98px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .planet.planet--medium {
+    bottom: auto;
+    top: 140px;
+    transform: translate(-25%, 0px);
+  }
+}
+.planet.planet--medium img {
+  -webkit-animation: moveUpDown 4s ease-in-out infinite;
+          animation: moveUpDown 4s ease-in-out infinite;
+}
 .planet.planet--saturn {
   position: absolute;
   width: 570px;
@@ -1457,9 +1495,25 @@ h2.modal__title {
   transform: translate(25%, 0px);
   z-index: 500;
 }
+@media screen and (max-width: 1439px) {
+  .planet.planet--saturn {
+    width: 470px;
+  }
+}
+@media screen and (max-width: 1365px) {
+  .planet.planet--saturn {
+    width: 400px;
+  }
+}
+@media screen and (max-width: 1279px) {
+  .planet.planet--saturn {
+    width: 296px;
+  }
+}
 @media screen and (max-width: 767px) {
   .planet.planet--saturn {
     width: 296px;
+    transform: translate(40%, 10px);
   }
 }
 .planet.planet--saturn img {
@@ -1476,6 +1530,20 @@ h2.modal__title {
   margin-bottom: -470px;
   pointer-events: none;
   overflow: hidden;
+}
+@media screen and (max-width: 1439px) {
+  .section--saturn {
+    height: 470px;
+    margin-top: -70px;
+    margin-bottom: -400px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .section--saturn {
+    height: 340px;
+    margin-top: 0px;
+    margin-bottom: -340px;
+  }
 }
 
 .section--promo {
@@ -2385,6 +2453,11 @@ h2.modal__title {
   width: 100%;
   margin-top: 100px;
 }
+@media screen and (max-width: 767px) {
+  .test {
+    margin-top: 250px;
+  }
+}
 .test .title--h2 {
   max-width: 634px;
   text-align: center;
@@ -2401,6 +2474,19 @@ h2.modal__title {
   font-family: var(--serif);
   font-style: oblique;
   font-size: 32px;
+  transition: 0.3s;
+  opacity: 1;
+}
+.step-counter.hidden {
+  opacity: 0;
+}
+@media screen and (max-width: 767px) {
+  .step-counter {
+    display: block;
+    width: 100%;
+    margin-bottom: 5px;
+    font-size: 20px;
+  }
 }
 
 .steps {
@@ -2409,25 +2495,42 @@ h2.modal__title {
   max-width: 1000px;
   margin: 40px auto;
   height: auto;
-  border: 1px solid tomato;
+  min-height: 560px;
+}
+@media screen and (max-width: 1023px) {
+  .steps {
+    min-height: auto;
+  }
 }
 
 .step {
   display: none;
   width: 100%;
   position: relative;
-  padding-left: 50px;
+  padding: 0px 50px;
   color: var(--biege);
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
   transition: opacity 0.3s;
 }
+@media screen and (max-width: 767px) {
+  .step {
+    padding: 0px;
+  }
+}
 .step > .step {
-  padding-left: 0px;
+  padding: 0px;
 }
 .step.active {
   display: inline-block;
+}
+@media screen and (max-width: 1023px) {
+  .step.active {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 .step.visible {
   opacity: 1;
@@ -2449,17 +2552,75 @@ h2.modal__title {
   max-width: 488px;
   float: left;
 }
+@media screen and (max-width: 1023px) {
+  .step__text {
+    width: 100%;
+    max-width: 100%;
+    float: none;
+  }
+}
 .step__text.full {
   width: 100%;
   max-width: 650px;
+}
+.step__text.final {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+  max-width: 100%;
+}
+.step__text.final .rocket {
+  position: relative;
+  width: 230px;
+  height: 230px;
+}
+.step__text.final b {
+  display: block;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+.step__text.final .button {
+  min-width: 400px;
+  margin-top: 10px;
+}
+@media screen and (max-width: 767px) {
+  .step__text.final .button {
+    min-width: 100%;
+  }
 }
 .step__text h2 {
   font-size: 48px;
   line-height: 1;
 }
+@media screen and (max-width: 1023px) {
+  .step__text h2 {
+    margin-bottom: 40px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .step__text h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+  }
+}
 .step__text h3 {
   font-size: 46px;
   line-height: 1;
+}
+@media screen and (max-width: 1023px) {
+  .step__text h3 {
+    margin-bottom: 40px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .step__text h3 {
+    font-size: 32px;
+    margin-bottom: 30px;
+  }
 }
 .step__text b {
   font-size: 32px;
@@ -2467,10 +2628,20 @@ h2.modal__title {
   font-family: var(--serif);
   font-style: oblique;
 }
+@media screen and (max-width: 767px) {
+  .step__text b {
+    font-size: 24px;
+  }
+}
 .step__text p {
   font-size: 24px;
   line-height: 1.2;
   margin-top: 36px;
+}
+@media screen and (max-width: 767px) {
+  .step__text p {
+    font-size: 14px;
+  }
 }
 .step__text span,
 .step__text p {
@@ -2488,6 +2659,12 @@ h2.modal__title {
   max-width: 400px;
   float: right;
 }
+@media screen and (max-width: 1023px) {
+  .step__actions {
+    width: 100%;
+    float: none;
+  }
+}
 .step__actions .form {
   max-width: 100%;
   width: 100%;
@@ -2499,6 +2676,11 @@ h2.modal__title {
 .step__actions .form .download-file {
   width: 100%;
   height: 400px;
+}
+@media screen and (max-width: 767px) {
+  .step__actions .form .download-file {
+    height: 280px;
+  }
 }
 .step__actions .form .label-for-file {
   width: 100%;
@@ -2514,8 +2696,16 @@ h2.modal__title {
   position: relative;
   z-index: 1;
 }
-.step__actions .form .label-for-file:hover {
-  border: 2px dashed var(--white);
+@media screen and (max-width: 767px) {
+  .step__actions .form .label-for-file {
+    border-radius: 30px;
+  }
+}
+.step__actions .form .label-for-file.invalid {
+  border: 2px dashed var(--invalid);
+}
+.step__actions .form .label-for-file.loaded {
+  border: none;
 }
 .step__actions .form .label-for-file .label__text {
   margin: 0;

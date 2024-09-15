@@ -234,49 +234,50 @@
               <p class="step-counter"><span data-js="step-counter">1</span>/3</p>
 
               <!--STEP 1-->
-              <div class="step" data-js="step-1">
+              <div class="step active visible" data-step="1">
                 <div class="step__text">
                   <h2 class="title">Укажи свой пол:</h2>
                 </div>
                 <div class="step__actions">
-                  <button type="button" class="button button--biege full" data-input="sex" data-toStep="step-2">Мужской</button>
-                  <button type="button" class="button button--biege full" data-input="sex" data-toStep="step-2">Женский</button>
+                  <button type="button" class="button button--biege full" data-input="sex" data-tostep="2">Мужской</button>
+                  <button type="button" class="button button--biege full" data-input="sex" data-tostep="2">Женский</button>
                 </div>
               </div>
 
               <!--STEP 2-->
-              <div class="step" data-js="step-2">
+              <div class="step" data-step="2">
                 <div class="step__text">
                   <h2 class="title">Выбери какой космический вкус тебе нравится / <br />в какой вселенной <br />ты бы хотел себя увидеть</h2>
                 </div>
                 <div class="step__actions">
-                  <button type="button" class="button button--biege full" data-input="taste" data-toStep="step-3">Взрывная карамель</button>
-                  <button type="button" class="button button--biege full" data-input="taste" data-toStep="step-3">Хрустящая сказка</button>
-                  <button type="button" class="button button--biege full" data-input="taste" data-toStep="step-3">Солёный крекер</button>
-                  <button type="button" class="button button--biege full" data-input="taste" data-toStep="step-3">Разноцветное драже</button>
+                  <button type="button" class="button button--biege full" data-input="taste" data-tostep="3">Взрывная карамель</button>
+                  <button type="button" class="button button--biege full" data-input="taste" data-tostep="3">Хрустящая сказка</button>
+                  <button type="button" class="button button--biege full" data-input="taste" data-tostep="3">Солёный крекер</button>
+                  <button type="button" class="button button--biege full" data-input="taste" data-tostep="3">Разноцветное драже</button>
                 </div>
               </div>
 
               <!--STEP 3-->
-              <div class="step active visible" data-js="step-3">
-                <!--SUBSTEP 1-->
-                <div class="step" data-js="substep-1">
-                  <div class="step__text full">
+              <div class="step" data-step="3">
+                <!--substep 1-->
+                <div class="step active visible" data-substep="1">
+                  <!--Показываем если мы НЕ зарегистрированы-->
+                  <!-- <div class="step__text full">
                     <h3 class="title">Зарегистрируйся для того чтобы узнать кто ты из шоколадной вселенной «Взрывная карамель»!</h3>
                     <button type="button" class="button button--biege" data-modal="registration">Зарегистрироваться</button>
-                  </div>
-                </div>
+                  </div> -->
 
-                <!--SUBSTEP 2-->
-                <div class="step" data-js="substep-1">
+                  <!--Показываем если мы зарегистрированы-->
                   <div class="step__text">
                     <h3 class="title">Загрузи свою фотографию и узнай кто ты из вселенной «Взрывная карамель»</h3>
                   </div>
                   <div class="step__actions">
-                    <form action="#" method="POST" class="form" enctype="multipart/form-data" novalidate>
+                    <form action="#" method="POST" id="test-form" class="form" enctype="multipart/form-data" novalidate>
+                      <input type="hidden" name="sex" class="sex" value="" />
+                      <input type="hidden" name="taste" class="taste" value="" />
                       <div class="download-file">
                         <label class="label-for-file">
-                          <input type="file" name="сheque" class="input-file" />
+                          <input type="file" name="photo" class="input input-file" required />
                           <img src="./assets/img/form/file.png" alt="Алёнка" />
                           <p class="label__text" data-text="перетащите фото в это поле">перетащите фото в это поле</p>
                         </label>
@@ -292,33 +293,21 @@
                   </div>
                 </div>
 
-                <!--SUBSTEP 3-->
-                <div class="step active visible" data-js="substep-1">
-                  <div class="step__text">
-                    <h3 class="title">Загрузи свою фотографию и узнай кто ты из вселенной «Взрывная карамель»</h3>
-                  </div>
-                  <div class="step__actions">
-                    <form action="#" method="POST" class="form" enctype="multipart/form-data" novalidate>
-                      <div class="download-file">
-                        <label class="label-for-file">
-                          <input type="file" name="сheque" class="input-file" />
-                          <img src="./assets/img/form/file.png" alt="Алёнка" />
-                          <p class="label__text" data-text="перетащите фото в это поле">перетащите фото в это поле</p>
-                        </label>
-                      </div>
-                      <button type="submit" class="button button--biege full">Сгенерировать</button>
-                    </form>
-                  </div>
-                  <div class="step__text">
-                    <p>
-                      Лимит на количество образов 5 штук. Пожалуйста, убедись, что на фотографии именно ты, лицо не перекрыто и повёрнуто на камеру.
-                    </p>
-                    <b>израсходовано 3/5 попыток</b>
+                <!--substep 3-->
+                <div class="step" data-substep="3">
+                  <div class="step__text final">
+                    <div class="rocket">
+                      <img src="./assets/img/hero/raketa2.png" alt="Ракета" class="animated" />
+                      <img src="./assets/img/hero/raketa.png" alt="Ракета" />
+                    </div>
+                    <b>
+                      Ракета в пути и примеряет на тебя новый образ! Обычно это быстро, но при турбулентности может занять до 12 часов. Фотографию
+                      можно будет скачать в личном кабинете.
+                    </b>
+                    <button type="button" class="button button--biege" data-toStep="1">В начало</button>
                   </div>
                 </div>
               </div>
-
-              <div class="step" data-js="step-3"><h2 class="title title--h1">Step1</h2></div>
             </div>
           </div>
         </div>
@@ -329,10 +318,18 @@
             <div class="runText__inner">победители&nbsp;победители&nbsp;победители&nbsp;</div>
           </div>
         </div>
+        <div class="planet planet--medium cube">
+          <img src="./assets/img/hero/planet_medium.png" alt="Алёнка" />
+        </div>
       </section>
 
       <!--Section--WINNERS-->
-      <section class="section section--winners full" style="padding: 100px 0px; background: #eee">
+      <section class="section section--winners">
+        <picture class="yellow-gradient">
+          <source media="(min-width:1024px)" srcset="./assets/img/svg/bg.svg" />
+          <source media="(max-width:1023px)" srcset="./assets/img/svg/bg_mobil.svg" />
+          <img src="./assets/img/svg/bg_mobil.svg" alt="Желтый градиент" />
+        </picture>
         <div class="section-container">
           <h2>Winners</h2>
         </div>
@@ -353,7 +350,7 @@
         <div class="modal" id="login">
           <button type="button" class="modal__close"></button>
           <h2 class="modal__title">Авторизация</h2>
-          <form action="#" method="POST" class="form" novalidate>
+          <form action="https://mirasov.dev/" method="POST" class="form" novalidate>
             <label class="label">
               <p class="label__text">Email</p>
               <input type="email" name="email" class="input" required />
@@ -507,7 +504,7 @@
           <form action="#" method="POST" class="form" enctype="multipart/form-data" novalidate>
             <div class="download-file">
               <label class="label-for-file">
-                <input type="file" name="сheque" class="input-file" />
+                <input type="file" name="сheque" class="input input-file" required />
                 <img src="./assets/img/svg/plus.svg" alt="Алёнка" />
                 <p class="label__text" data-text="Перетащите фото чека или нажмите для выбора">Перетащите фото чека или нажмите для выбора</p>
               </label>
