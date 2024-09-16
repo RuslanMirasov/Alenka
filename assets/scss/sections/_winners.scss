@@ -1,0 +1,9 @@
+.section--winners {
+  padding: 105px 0px;
+  z-index: 2;
+  .section-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

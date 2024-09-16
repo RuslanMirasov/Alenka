@@ -747,10 +747,37 @@ h6 {
   position: relative;
   bottom: 0px;
   left: 0px;
-  border-top: 1px solid #ccc;
-  background: var(--white);
-  padding: 30px 0px;
-  z-index: 5;
+  background: var(--bg);
+  color: var(--white);
+  padding: 100px 0px 30px 0px;
+}
+.footer .section-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: 12px;
+}
+.footer .section-container a {
+  border-bottom: 1px solid var(--white);
+}
+.footer .section-container a:hover {
+  color: var(--biege);
+  border-bottom: 1px solid var(--biege);
+}
+@media screen and (max-width: 767px) {
+  .footer .section-container {
+    justify-content: center;
+    text-align: center;
+  }
+  .footer .section-container p {
+    max-width: 245px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .footer {
+    padding: 60px 0px 30px 0px;
+  }
 }
 
 .buttonWrapper {
@@ -1546,6 +1573,169 @@ h2.modal__title {
   }
 }
 
+.winnersTable {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1000px;
+  margin-top: 30px;
+  text-align: left;
+  font-size: 22px;
+}
+.winnersTable thead tr {
+  padding: 15px 20px;
+}
+@media screen and (min-width: 768px) {
+  .winnersTable thead tr {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+@media screen and (max-width: 767px) {
+  .winnersTable thead tr {
+    padding: 6px 0px;
+  }
+}
+.winnersTable thead tr th {
+  font-size: 32px;
+  color: var(--red);
+  font-family: var(--serif);
+  font-style: oblique;
+}
+@media screen and (max-width: 1023px) {
+  .winnersTable thead tr th {
+    font-size: 26px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .winnersTable thead tr th {
+    font-size: 16px;
+  }
+}
+.winnersTable tbody tr {
+  color: var(--brown);
+  transition: 0.3s;
+  padding: 15px 20px;
+  border-radius: 30px;
+  vertical-align: top;
+}
+@media screen and (min-width: 768px) {
+  .winnersTable tbody tr {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+@media screen and (max-width: 767px) {
+  .winnersTable tbody tr {
+    padding: 6px 0px;
+    display: auto;
+  }
+}
+.winnersTable tbody tr:hover {
+  background: var(--white);
+}
+@media screen and (max-width: 767px) {
+  .winnersTable tbody tr:hover {
+    background: inherit;
+  }
+}
+.winnersTable td:nth-child(1),
+.winnersTable th:nth-child(1) {
+  min-width: 150px;
+}
+.winnersTable td:nth-child(2),
+.winnersTable th:nth-child(2) {
+  min-width: 120px;
+}
+.winnersTable td:nth-child(3),
+.winnersTable th:nth-child(3) {
+  min-width: 160px;
+}
+.winnersTable td:nth-child(4),
+.winnersTable th:nth-child(4) {
+  min-width: 316px;
+}
+@media screen and (max-width: 1023px) {
+  .winnersTable td,
+.winnersTable th {
+    font-size: 18px;
+  }
+  .winnersTable td:nth-child(1),
+.winnersTable th:nth-child(1) {
+    min-width: 90px;
+  }
+  .winnersTable td:nth-child(2),
+.winnersTable th:nth-child(2) {
+    min-width: 120px;
+  }
+  .winnersTable td:nth-child(3),
+.winnersTable th:nth-child(3) {
+    min-width: 120px;
+  }
+  .winnersTable td:nth-child(4),
+.winnersTable th:nth-child(4) {
+    min-width: 220px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .winnersTable td,
+.winnersTable th {
+    font-size: 11px;
+    padding: 5px;
+  }
+  .winnersTable td:nth-child(1),
+.winnersTable th:nth-child(1) {
+    min-width: auto;
+    padding-left: 0px;
+    white-space: nowrap;
+  }
+  .winnersTable td:nth-child(2),
+.winnersTable th:nth-child(2) {
+    min-width: auto;
+    white-space: nowrap;
+  }
+  .winnersTable td:nth-child(3),
+.winnersTable th:nth-child(3) {
+    min-width: auto;
+    white-space: nowrap;
+  }
+  .winnersTable td:nth-child(4),
+.winnersTable th:nth-child(4) {
+    min-width: auto;
+    padding-right: 0px;
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin: 30px 0px;
+  width: 100%;
+}
+@media screen and (max-width: 767px) {
+  .pagination {
+    margin-top: 24px;
+  }
+}
+.pagination svg {
+  stroke: currentColor;
+}
+
+.pagination-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  font-size: 20px;
+  width: 30px;
+  height: 30px;
+  color: var(--brown);
+}
+.pagination-btn:hover, .pagination-btn.active, .pagination-btn.left, .pagination-btn.right {
+  color: var(--red);
+}
+
 .section--promo {
   color: var(--white);
   height: auto;
@@ -1896,7 +2086,7 @@ h2.modal__title {
   right: 0px;
   bottom: 0px;
   overflow: hidden;
-  background: url("../img/gif/starsBg.gif") repeat-y center top;
+  background: var(--bg) url("../img/gif/test.gif") repeat-y center top/cover;
   background-size: 100% auto;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -1912,9 +2102,9 @@ h2.modal__title {
   top: 0px;
   right: 0px;
   bottom: 0px;
-  background: var(--blue-dark);
+  background: var(--bg);
   z-index: 2;
-  opacity: 0.4;
+  opacity: 0.3;
 }
 .space-scene img {
   opacity: 1;
@@ -2264,7 +2454,7 @@ h2.modal__title {
   text-align: center;
   overflow: visible;
   color: var(--brown);
-  background: url("../img/gif/starsBg.gif") repeat-y center top/cover;
+  background: var(--bg) url("../img/gif/test.gif") repeat-y center top/cover;
 }
 .section--prizes .section-container {
   z-index: 2;

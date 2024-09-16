@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+   <defs>
+
+      <symbol id="arr-left" viewBox="0 0 9 16">
+         <path d="M7.5 1.58026L1.57407 8.00001L7.5 14.4198" stroke="#D30E14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+
+      <symbol id="arr-right" viewBox="0 0 9 16">
+         <path d="M1.5 14.2563L7.42593 7.8366L1.5 1.41684"  stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+
+   </defs>
+</svg> 
