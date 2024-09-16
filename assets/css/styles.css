@@ -74,11 +74,6 @@ picture {
   max-width: 100%;
 }
 
-svg {
-  display: block;
-  fill: currentColor;
-}
-
 button {
   display: flex;
   flex-wrap: wrap;
@@ -1584,13 +1579,13 @@ h2.modal__title {
 .winnersTable thead tr {
   padding: 15px 20px;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
   .winnersTable thead tr {
     display: flex;
     justify-content: space-between;
   }
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1023px) {
   .winnersTable thead tr {
     padding: 6px 0px;
   }
@@ -1618,13 +1613,13 @@ h2.modal__title {
   border-radius: 30px;
   vertical-align: top;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
   .winnersTable tbody tr {
     display: flex;
     justify-content: space-between;
   }
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1023px) {
   .winnersTable tbody tr {
     padding: 6px 0px;
     display: auto;
@@ -1636,6 +1631,39 @@ h2.modal__title {
 @media screen and (max-width: 767px) {
   .winnersTable tbody tr:hover {
     background: inherit;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .winnersTable td.waiting, .winnersTable td.confirm, .winnersTable td.rejected,
+.winnersTable th.waiting,
+.winnersTable th.confirm,
+.winnersTable th.rejected {
+    position: relative;
+    padding-left: 30px;
+  }
+  .winnersTable td.waiting:before, .winnersTable td.confirm:before, .winnersTable td.rejected:before,
+.winnersTable th.waiting:before,
+.winnersTable th.confirm:before,
+.winnersTable th.rejected:before {
+    content: "";
+    width: 24px;
+    height: 24px;
+    background: red;
+    position: absolute;
+    left: 0px;
+    top: 2px;
+  }
+  .winnersTable td.waiting:before,
+.winnersTable th.waiting:before {
+    background: url("../img/svg/waiting.svg") no-repeat center center;
+  }
+  .winnersTable td.confirm:before,
+.winnersTable th.confirm:before {
+    background: url("../img/svg/prize.svg") no-repeat center center;
+  }
+  .winnersTable td.rejected:before,
+.winnersTable th.rejected:before {
+    background: url("../img/svg/reject.svg") no-repeat center center;
   }
 }
 .winnersTable td:nth-child(1),
@@ -1658,10 +1686,12 @@ h2.modal__title {
   .winnersTable td,
 .winnersTable th {
     font-size: 18px;
+    padding: 5px;
   }
   .winnersTable td:nth-child(1),
 .winnersTable th:nth-child(1) {
     min-width: 90px;
+    padding-left: 0px;
   }
   .winnersTable td:nth-child(2),
 .winnersTable th:nth-child(2) {
@@ -1674,18 +1704,17 @@ h2.modal__title {
   .winnersTable td:nth-child(4),
 .winnersTable th:nth-child(4) {
     min-width: 220px;
+    padding-right: 0px;
   }
 }
 @media screen and (max-width: 767px) {
   .winnersTable td,
 .winnersTable th {
     font-size: 11px;
-    padding: 5px;
   }
   .winnersTable td:nth-child(1),
 .winnersTable th:nth-child(1) {
     min-width: auto;
-    padding-left: 0px;
     white-space: nowrap;
   }
   .winnersTable td:nth-child(2),
@@ -1701,25 +1730,22 @@ h2.modal__title {
   .winnersTable td:nth-child(4),
 .winnersTable th:nth-child(4) {
     min-width: auto;
-    padding-right: 0px;
   }
 }
 
 .pagination {
+  margin: 30px 0px;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   align-content: center;
-  margin: 30px 0px;
-  width: 100%;
+  gap: 10px;
 }
 @media screen and (max-width: 767px) {
   .pagination {
-    margin-top: 24px;
+    gap: 0px;
   }
-}
-.pagination svg {
-  stroke: currentColor;
 }
 
 .pagination-btn {
@@ -1732,8 +1758,18 @@ h2.modal__title {
   height: 30px;
   color: var(--brown);
 }
-.pagination-btn:hover, .pagination-btn.active, .pagination-btn.left, .pagination-btn.right {
+.pagination-btn:hover, .pagination-btn.active {
   color: var(--red);
+}
+.pagination-btn svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--red);
+}
+@media screen and (max-width: 767px) {
+  .pagination-btn {
+    font-size: 20px;
+  }
 }
 
 .section--promo {
@@ -2086,7 +2122,7 @@ h2.modal__title {
   right: 0px;
   bottom: 0px;
   overflow: hidden;
-  background: url("../img/gif/starsBg.gif") repeat-y center top/cover;
+  background: var(--bg) url("../img/gif/test.gif") repeat-y center top/cover;
   background-size: 100% auto;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -2102,7 +2138,7 @@ h2.modal__title {
   top: 0px;
   right: 0px;
   bottom: 0px;
-  background: var(--bg);
+  background: var(--blue-dark);
   z-index: 2;
   opacity: 0.3;
 }
@@ -2454,41 +2490,66 @@ h2.modal__title {
   text-align: center;
   overflow: visible;
   color: var(--brown);
-  background: url("../img/gif/starsBg.gif") repeat-y center top/cover;
+  background: var(--bg) url("../img/gif/test.gif") repeat-y center top/cover;
 }
 .section--prizes .section-container {
   z-index: 2;
 }
-.section--prizes .button {
+
+.section--prizes .button.button--big,
+.section--winners .button.button--big {
   position: relative;
   bottom: -55px;
+  margin: 0 auto;
 }
 @media screen and (max-width: 1279px) {
-  .section--prizes .button {
+  .section--prizes .button.button--big,
+.section--winners .button.button--big {
     bottom: -65px;
   }
 }
 @media screen and (max-width: 1023px) {
-  .section--prizes .button {
+  .section--prizes .button.button--big,
+.section--winners .button.button--big {
     bottom: -55px;
   }
 }
 @media screen and (max-width: 767px) {
-  .section--prizes .button {
+  .section--prizes .button.button--big,
+.section--winners .button.button--big {
     bottom: -45px;
+  }
+}
+
+.section--winners .button.button--big {
+  margin-top: -55px;
+}
+@media screen and (max-width: 1279px) {
+  .section--winners .button.button--big {
+    margin-top: -65px;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .section--winners .button.button--big {
+    bottom: -88px;
+    margin-top: -75px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .section--winners .button.button--big {
+    bottom: -55px;
+    margin-top: -55px;
   }
 }
 
 .yellow-gradient {
   display: block;
   position: absolute;
-  left: 50%;
   top: -70px;
   width: 100%;
   height: calc(100% + 140px);
   -o-object-fit: fill;
      object-fit: fill;
-  transform: translate(-50%, 0%);
 }
 @media screen and (max-width: 1023px) {
   .yellow-gradient {
@@ -2906,4 +2967,76 @@ h2.modal__title {
   position: absolute;
   width: 100px;
   height: 90px;
+}
+
+.section--lk .section-container {
+  z-index: 2;
+}
+.section--lk .bg-lines {
+  min-height: 120vh;
+}
+@media screen and (max-width: 767px) {
+  .section--lk {
+    margin-top: 0px;
+  }
+  .section--lk .hero__runtext {
+    margin-bottom: 10px;
+  }
+}
+
+.lk-hero {
+  width: 100%;
+}
+.lk-hero .title {
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 30px;
+}
+@media screen and (max-width: 767px) {
+  .lk-hero .title {
+    margin-top: 0px;
+  }
+}
+
+.user-info {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  gap: 14px;
+  position: relative;
+  z-index: 4;
+}
+.user-info li {
+  width: 100%;
+  text-align: center;
+}
+.user-info h2 {
+  font-size: 32px;
+  line-height: 1;
+  color: var(--biege);
+}
+.user-info a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  font-size: 16px;
+  gap: 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0);
+  transition: 0.3s;
+}
+.user-info a:hover span {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+}
+.user-info button {
+  margin: 0 auto;
+  cursor: pointer;
+  color: var(--white);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+}
+.user-info button:hover {
+  color: var(--biege);
+  border-bottom: 1px solid var(--biege);
 }

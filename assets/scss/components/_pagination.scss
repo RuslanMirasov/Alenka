@@ -1,16 +1,13 @@
 .pagination {
+  margin: 30px 0px;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   align-content: center;
-  margin: 30px 0px;
-  width: 100%;
-
+  gap: 10px;
   @media screen and (max-width: 767px) {
-    margin-top: 24px;
-  }
-  svg {
-    stroke: currentColor;
+    gap: 0px;
   }
 }
 
@@ -24,9 +21,15 @@
   height: 30px;
   color: var(--brown);
   &:hover,
-  &.active,
-  &.left,
-  &.right {
+  &.active {
     color: var(--red);
+  }
+  svg {
+    width: 20px;
+    height: 20px;
+    stroke: var(--red);
+  }
+  @media screen and (max-width: 767px) {
+    font-size: 20px;
   }
 }

@@ -380,18 +380,21 @@
               </tr>
             </tbody>
           </table>
-
           <!--winners pagination-->
           <div class="pagination">
-            <a href="#" class="pagination-btn left" aria-label="left pagination">
-              <svg width="14" height="14"><use href="./assets/img/icons.svg#arr-left"></use></svg>
+            <a href="#" class="pagination-btn" aria-label="left pagination">
+              <svg width="9" height="15" viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 1L2 7.5L8 14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
             </a>
             <a href="#" class="pagination-btn active">1</a>
             <a href="#" class="pagination-btn">2</a>
             <a href="#" class="pagination-btn">3</a>
             <a href="#" class="pagination-btn">4</a>
-            <a href="#" class="pagination-btn right" aria-label="right pagination">
-              <svg width="14" height="14"><use href="./assets/img/icons.svg#arr-right"></use></svg>
+            <a href="#" class="pagination-btn" aria-label="right pagination">
+              <svg width="9" height="15" viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 1L7 7.5L1 14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
             </a>
           </div>
         </div>
@@ -458,7 +461,7 @@
 
             <fieldset class="fieldset">
               <label class="label">
-                <input type="checkbox" name="policy" class="checkbox" data-agree checked />
+                <input type="checkbox" name="policy" class="checkbox" data-agree />
                 <p class="label__text">
                   <span>
                     Я ознакомился с <a href="#" target="_blank">Правилами акции</a>, <a href="#" target="_blank">Пользовательским соглашением</a> и
@@ -476,7 +479,7 @@
             </fieldset>
 
             <footer>
-              <button type="submit" class="button button--submit">Зарегистрироваться</button>
+              <button type="submit" class="button button--submit" disabled>Зарегистрироваться</button>
               <ul class="modal__links">
                 <li><a href="#" data-modal="login">Авторизация</a></li>
               </ul>
@@ -644,7 +647,7 @@
           <button type="button" class="button button--submit" onclick="closeModal()">Продолжить</button>
         </div>
 
-        <!-- PASSWORD CONFIRM-->
+        <!-- CHECK DOWNLOAD CONFIRM--->
         <div class="modal" id="confirm-сheque-download">
           <button type="button" class="modal__close"></button>
           <h2 class="modal__title">Чек загружен</h2>

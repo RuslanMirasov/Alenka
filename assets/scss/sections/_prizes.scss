@@ -3,14 +3,19 @@
   text-align: center;
   overflow: visible;
   color: var(--brown);
-  background: url('../img/gif/starsBg.gif') repeat-y center top/cover;
-  // background: var(--bg) url('../img/gif/test.gif') repeat-y center top/cover;
+  // background: url('../img/gif/starsBg.gif') repeat-y center top/cover;
+  background: var(--bg) url('../img/gif/test.gif') repeat-y center top/cover;
   .section-container {
     z-index: 2;
   }
-  .button {
+}
+
+.section--prizes,
+.section--winners {
+  .button.button--big {
     position: relative;
     bottom: -55px;
+    margin: 0 auto;
     @media screen and (max-width: 1279px) {
       bottom: -65px;
     }
@@ -22,16 +27,30 @@
     }
   }
 }
+.section--winners {
+  .button.button--big {
+    margin-top: -55px;
+    @media screen and (max-width: 1279px) {
+      margin-top: -65px;
+    }
+    @media screen and (max-width: 1023px) {
+      bottom: -88px;
+      margin-top: -75px;
+    }
+    @media screen and (max-width: 767px) {
+      bottom: -55px;
+      margin-top: -55px;
+    }
+  }
+}
 
 .yellow-gradient {
   display: block;
   position: absolute;
-  left: 50%;
   top: -70px;
   width: 100%;
   height: calc(100% + 140px);
   object-fit: fill;
-  transform: translate(-50%, 0%);
   @media screen and (max-width: 1023px) {
     top: -50px;
     height: calc(100% + 100px);
