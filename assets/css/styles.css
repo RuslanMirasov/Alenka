@@ -2122,7 +2122,7 @@ h2.modal__title {
   right: 0px;
   bottom: 0px;
   overflow: hidden;
-  background: var(--bg) url("../img/gif/test.gif") repeat-y center top/cover;
+  background: url("../img/gif/starsBg.gif") repeat-y center top/cover;
   background-size: 100% auto;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -2490,7 +2490,7 @@ h2.modal__title {
   text-align: center;
   overflow: visible;
   color: var(--brown);
-  background: var(--bg) url("../img/gif/test.gif") repeat-y center top/cover;
+  background: url("../img/gif/starsBg.gif") repeat-y center top/cover;
 }
 .section--prizes .section-container {
   z-index: 2;
