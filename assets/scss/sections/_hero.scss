@@ -1,8 +1,8 @@
 .section--hero {
-  background: var(--bg);
   color: var(--white);
   padding-top: 68px;
   overflow: hidden;
+  // background: var(--space);
   @media screen and (max-width: 767px) {
     padding-top: 50px;
   }
@@ -71,22 +71,10 @@
   right: 0px;
   bottom: 0px;
   overflow: hidden;
-  background: url('../img/gif/starsBg.gif') repeat-y center top/cover;
   background-size: 100% auto;
   user-select: none;
   pointer-events: none;
   z-index: 0;
-  &:before {
-    content: '';
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    background: var(--blue-dark);
-    z-index: 2;
-    opacity: 0.3;
-  }
   img {
     opacity: 1;
     position: absolute;

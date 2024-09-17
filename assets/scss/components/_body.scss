@@ -7,7 +7,9 @@
   align-items: center;
   align-content: flex-start;
   position: relative;
-  color: var(--black);
+  color: var(--brown);
+  background: var(--space);
+  // background-attachment: fixed;
   overflow-x: hidden;
   overflow-y: scroll;
   font-family: var(--paragmatica);
@@ -16,6 +18,17 @@
     overflow-x: hidden;
     overflow-y: hidden;
   }
+  &.body--history {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    header,
+    footer,
+    section {
+      opacity: 0;
+      pointer-events: none;
+      user-select: none;
+    }
+  }
 }
 
 .main {
@@ -23,4 +36,9 @@
   width: 100%;
   position: relative;
   z-index: 1;
+}
+header,
+footer,
+section {
+  transition: opacity 1s;
 }

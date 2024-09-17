@@ -1,6 +1,8 @@
 .section--test {
   overflow: hidden;
+  // background: var(--space);
   color: var(--white);
+  z-index: 0;
   .section-container {
     justify-content: center;
   }

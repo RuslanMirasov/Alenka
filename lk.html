@@ -16,6 +16,7 @@
     <link rel="apple-touch-icon" sizes="144x144" href="./assets/img/icons/apple-touch-icon-144x144.png" />
     <link rel="apple-touch-icon" sizes="152x152" href="./assets/img/icons/apple-touch-icon-152x152.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/icons/apple-touch-icon-180x180.png" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./assets/css/styles.min.css" />
     <title>Алёнка | Личный кабинет</title>
   </head>
@@ -25,7 +26,7 @@
       <div class="section-container">
         <!--Logo-->
         <div class="logo">
-          <a href="#" data-scrollto="section--hero" class="logo-alenka">
+          <a href="./" class="logo-alenka">
             <img src="./assets/img/svg/logo.svg" alt="Алёнка" />
           </a>
           <a href="#" target="_blank" class="logo-magnit">
@@ -41,14 +42,16 @@
           <div class="menu-body">
             <nav class="menu">
               <menu class="menu__list">
-                <li><a href="#" class="menu__link" data-scrollto="section--hero">История</a></li>
-                <li><a href="#" class="menu__link" data-scrollto="section--rules">Правила</a></li>
-                <li><a href="#" class="menu__link" data-scrollto="section--prizes">Призы</a></li>
-                <li><a href="#" class="menu__link" data-scrollto="scrollto--test">Тест</a></li>
-                <li><a href="#" class="menu__link" data-scrollto="section--winners">Победители</a></li>
+                <li><a href="#" class="menu__link" data-history>История</a></li>
+                <li><a href="./#rules" class="menu__link">Правила</a></li>
+                <li><a href="./#preise" class="menu__link">Призы</a></li>
+                <li><a href="./#test" class="menu__link">Тест</a></li>
+                <li><a href="./#winners" class="menu__link">Победители</a></li>
                 <li><a href="#" class="menu__link" data-modal="callback">Обратная связь</a></li>
                 <li>
-                  <a href="#" class="button button--blue" data-modal="login"> <img src="./assets/img/svg/lk.svg" alt="Алёнка" /> <span>Вход</span></a>
+                  <a href="#" class="button button--blue" data-modal="login">
+                    <img src="./assets/img/svg/profile.svg" alt="Алёнка" /> <span>Вход</span></a
+                  >
                 </li>
               </menu>
             </nav>
@@ -60,7 +63,7 @@
             <span>Загрузить чек</span>
           </button>
           <a href="#" class="button button--icon" data-modal="login">
-            <img src="./assets/img/svg/lk.svg" alt="Алёнка" />
+            <img src="./assets/img/svg/profile.svg" alt="Алёнка" />
           </a>
           <button type="button" class="burger" data-js="burger"><span>burger</span></button>
         </div>
@@ -189,6 +192,73 @@
             <span>ЗАРЕГИСТРИРОВАТЬ ЧЕК</span>
             <img src="./assets/img/svg/arr-right.svg" alt="arrow" />
           </button>
+        </div>
+      </section>
+
+      <!--Section--SLIDER-->
+      <section class="section section--slider">
+        <div class="section-container">
+          <h2 class="title title--h1">
+            Мои образы из вселенной <br />
+            <span>«Взрывная карамель»</span> Алёнки
+          </h2>
+          <p class="subtitle subtitle--lk">
+            Поделись своим образом в ВК, указав группу <a href="#" target="_blank">@shopalenka</a> и получи шанс выиграть шоколадный набор!
+            <br />Подробности в <a href="#" target="_blank">правилах акции</a>.
+          </p>
+
+          <!--SWIPER SLIDER-->
+
+          <div class="swiper swiper--look">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="look">
+                  <img src="./assets/img/hero/slide.jpg" alt="Мои образы из вселенной «Взрывная карамель»" />
+                  <div class="look__buttons">
+                    <a href="./assets/img/hero/slide.jpg" class="button button--biege" target="_blank">Скачать</a>
+                    <a href="#" class="button button--biege">Поделиться</a>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="look">
+                  <img src="./assets/img/hero/slide.jpg" alt="Мои образы из вселенной «Взрывная карамель»" />
+                  <div class="look__buttons">
+                    <a href="./assets/img/hero/slide.jpg" class="button button--biege" target="_blank">Скачать</a>
+                    <a href="#" class="button button--biege">Поделиться</a>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="look">
+                  <img src="./assets/img/hero/slide.jpg" alt="Мои образы из вселенной «Взрывная карамель»" />
+                  <div class="look__buttons">
+                    <a href="./assets/img/hero/slide.jpg" class="button button--biege" target="_blank">Скачать</a>
+                    <a href="#" class="button button--biege">Поделиться</a>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="look">
+                  <img src="./assets/img/hero/slide.jpg" alt="Мои образы из вселенной «Взрывная карамель»" />
+                  <div class="look__buttons">
+                    <a href="./assets/img/hero/slide.jpg" class="button button--biege" target="_blank">Скачать</a>
+                    <a href="#" class="button button--biege">Поделиться</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--SWIPER SLIDER END-->
+
+          <div class="slider-button">
+            <a href="#" class="button button--big">
+              <span>СГЕНЕРИРОВАТЬ ЕЩЕ</span>
+              <img src="./assets/img/svg/arr-right.svg" alt="arrow" />
+            </a>
+            <p class="try-count">Израсходовано 3/5 попыток</p>
+          </div>
         </div>
       </section>
     </main>
@@ -453,6 +523,27 @@
       </div>
     </div>
 
+    <!--HISTORY-->
+    <div class="history" data-js="history">
+      <div class="space-scene">
+        <img src="./assets/img/hero/meteor.png" alt="Падающая звезда" class="meteor" />
+        <img src="./assets/img/hero/meteor.png" alt="Падающая звезда" class="meteor" />
+      </div>
+      <button type="button" class="button button--white" onclick="hideHistory();">Пропустить&nbsp;&nbsp;&nbsp;&#x3E;</button>
+      <button type="button" class="scroll-down">
+        <img src="./assets/img/gif/arrow.gif" alt="Логотип Алёнка" />
+      </button>
+
+      <!--scens-->
+      <div class="history-scens">
+        <div>
+          <h1 class="title title--h2">Сцена <span data-js="scens-counter">1</span></h1>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./assets/js/history.js" type="module" defer></script>
     <script src="./assets/js/menu.js" type="module" defer></script>
     <script src="./assets/js/forms.js" type="module" defer></script>
     <script src="./assets/js/form-validation.js" type="module" defer></script>

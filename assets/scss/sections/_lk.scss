@@ -44,6 +44,9 @@
     font-size: 32px;
     line-height: 1;
     color: var(--biege);
+    @media screen and (max-width: 767px) {
+      font-size: 28px;
+    }
   }
   a {
     display: inline-flex;

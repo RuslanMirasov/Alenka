@@ -4,8 +4,9 @@
   position: relative;
   bottom: 0px;
   left: 0px;
-  background: var(--bg);
+  background-size: 100% auto;
   color: var(--white);
+  // background: var(--space);
   padding: 100px 0px 30px 0px;
   .section-container {
     display: flex;
@@ -21,7 +22,10 @@
       }
     }
     @media screen and (max-width: 767px) {
+      flex-direction: column;
       justify-content: center;
+      align-items: center;
+      align-content: center;
       text-align: center;
       p {
         max-width: 245px;

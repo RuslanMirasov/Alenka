@@ -107,6 +107,18 @@
     }
   }
 
+  &.button--white {
+    height: 34px;
+    padding: 0px 16px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.7);
+    color: var(--brown);
+    font-family: var(--paragmatica);
+    &:hover {
+      background: rgba(255, 255, 255, 1);
+    }
+  }
+
   &:disabled {
     opacity: 0.3;
     pointer-events: none;

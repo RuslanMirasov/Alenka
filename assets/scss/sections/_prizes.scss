@@ -1,9 +1,10 @@
 .section--prizes {
-  z-index: 2;
+  z-index: 3;
   text-align: center;
   overflow: visible;
   color: var(--brown);
-  background: url('../img/gif/starsBg.gif') repeat-y center top/cover;
+  // background: var(--space);
+  background-size: 100% auto;
   .section-container {
     z-index: 2;
   }

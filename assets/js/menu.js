@@ -1,4 +1,4 @@
-import { modifyScrollbar } from './modal.js';
+// import { modifyScrollbar } from './modal.js';
 const nenuBackdrop = document.querySelector('[data-js="menu-backdrop"]');
 const burger = document.querySelector('[data-js="burger"]');
 
@@ -15,11 +15,11 @@ const menuToggle = () => {
   burger.classList.toggle('is-open');
   if (!document.body.classList.contains('freez')) {
     document.body.classList.add('freez');
-    modifyScrollbar();
+    // modifyScrollbar();
     return;
   }
   document.body.classList.remove('freez');
-  modifyScrollbar();
+  // modifyScrollbar();
 };
 
 burger.addEventListener('click', menuToggle);

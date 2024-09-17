@@ -16,6 +16,7 @@
   --menu-gradient: linear-gradient(120deg, #f4db6c, #fff8d8, #f4db6c);
   --modal-bg-radial: radial-gradient(#d3c587 0%, #f4db6c 100%);
   --modal-bg: linear-gradient(90deg, rgba(244, 219, 108, 1) 0%, rgba(255, 255, 255, 1) 50%, rgba(244, 219, 108, 1) 100%);
+  --space: linear-gradient(rgba(39, 0, 122, 0.4), rgba(39, 0, 122, 0.4)), url('../img/gif/starsBg.gif') repeat-y center top/cover;
 
   --paragmatica: 'Pragmatica regular', verdana;
   --paragmatica-bold: 'Pragmatica bold', verdana;
@@ -33,6 +34,17 @@
 @import './basics/typography';
 @import './basics/animations';
 
+//Sections
+@import './sections/history';
+@import './sections/promo';
+@import './sections/hero';
+@import './sections/rules';
+@import './sections/prizes';
+@import './sections/test';
+@import './sections/lk';
+@import './sections/winners';
+@import './sections/slider';
+
 //Components
 @import './components/body';
 @import './components/section';
@@ -47,14 +59,6 @@
 @import './components/planet';
 @import './components/winnersTable';
 @import './components/pagination';
-
-//Sections
-@import './sections/promo';
-@import './sections/hero';
-@import './sections/rules';
-@import './sections/prizes';
-@import './sections/test';
-@import './sections/lk';
 
 // @media screen and (min-width: 1366px) {
 //   min-width: 196px;

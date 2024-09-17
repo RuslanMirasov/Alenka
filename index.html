@@ -41,7 +41,7 @@
           <div class="menu-body">
             <nav class="menu">
               <menu class="menu__list">
-                <li><a href="#" class="menu__link" data-scrollto="section--hero">История</a></li>
+                <li><a href="#" class="menu__link" data-history>История</a></li>
                 <li><a href="#" class="menu__link" data-scrollto="section--rules">Правила</a></li>
                 <li><a href="#" class="menu__link" data-scrollto="section--prizes">Призы</a></li>
                 <li><a href="#" class="menu__link" data-scrollto="scrollto--test">Тест</a></li>
@@ -105,7 +105,7 @@
           </a>
         </div>
 
-        <div class="section-container section--rules">
+        <div class="section-container section--rules" id="rules">
           <ul class="rules">
             <li>
               <h2 class="title title--h3">Купи</h2>
@@ -149,7 +149,7 @@
       </section>
 
       <!--Section--PRIZES-->
-      <section class="section section--prizes">
+      <section class="section section--prizes" id="preise">
         <picture class="yellow-gradient">
           <source media="(min-width:1024px)" srcset="./assets/img/svg/bg.svg" />
           <source media="(max-width:1023px)" srcset="./assets/img/svg/bg_mobil.svg" />
@@ -219,7 +219,7 @@
       </section>
 
       <!--Section--TEST-->
-      <section class="section section--test">
+      <section class="section section--test" id="test">
         <div class="space-scene">
           <img src="./assets/img/hero/meteor.png" alt="Падающая звезда" class="meteor" />
           <img src="./assets/img/hero/meteor.png" alt="Падающая звезда" class="meteor" />
@@ -324,7 +324,7 @@
       </section>
 
       <!--Section--WINNERS-->
-      <section class="section section--winners">
+      <section class="section section--winners" id="winners">
         <picture class="yellow-gradient">
           <source media="(min-width:1024px)" srcset="./assets/img/svg/bg.svg" />
           <source media="(max-width:1023px)" srcset="./assets/img/svg/bg_mobil.svg" />
@@ -661,6 +661,26 @@
       </div>
     </div>
 
+    <!--HISTORY-->
+    <div class="history" data-js="history">
+      <div class="space-scene">
+        <img src="./assets/img/hero/meteor.png" alt="Падающая звезда" class="meteor" />
+        <img src="./assets/img/hero/meteor.png" alt="Падающая звезда" class="meteor" />
+      </div>
+      <button type="button" class="button button--white" onclick="hideHistory();">Пропустить&nbsp;&nbsp;&nbsp;&#x3E;</button>
+      <button type="button" class="scroll-down">
+        <img src="./assets/img/gif/arrow.gif" alt="Логотип Алёнка" />
+      </button>
+
+      <!--scens-->
+      <div class="history-scens">
+        <div>
+          <h1 class="title title--h2">Сцена <span data-js="scens-counter">1</span></h1>
+        </div>
+      </div>
+    </div>
+
+    <script src="./assets/js/history.js" type="module" defer></script>
     <script src="./assets/js/test.js" type="module" defer></script>
     <script src="./assets/js/menu.js" type="module" defer></script>
     <script src="./assets/js/forms.js" type="module" defer></script>

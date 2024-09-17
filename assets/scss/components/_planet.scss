@@ -31,6 +31,7 @@
     left: 0px;
     bottom: 0px;
     transform: translate(-35%, 0px);
+    z-index: 0;
     @media screen and (max-width: 1279px) {
       width: 500px;
       transform: translate(-35%, -20%);

@@ -65,3 +65,11 @@ menu,
 ol {
   list-style: none;
 }
+
+input[type='date'],
+input[type='time'] {
+  width: 100%;
+  min-width: 100%;
+  -webkit-appearance: none;
+  appearance: none;
+}
