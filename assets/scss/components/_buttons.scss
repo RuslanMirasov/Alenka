@@ -72,6 +72,21 @@
     font-family: var(--paragmatica);
     color: var(--black);
     box-shadow: -4px 6px 0px 0px var(--red);
+    &.vk {
+      @media screen and (max-width: 767px) {
+        gap: 10px;
+      }
+      &:after {
+        content: '';
+        width: 26px;
+        height: 16px;
+        background: url('../img/svg/vk.svg') no-repeat center center/cover;
+        @media screen and (max-width: 767px) {
+          width: 17px;
+          height: 10px;
+        }
+      }
+    }
   }
 
   &.button--blue {

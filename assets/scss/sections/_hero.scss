@@ -2,7 +2,6 @@
   color: var(--white);
   padding-top: 68px;
   overflow: hidden;
-  // background: var(--space);
   @media screen and (max-width: 767px) {
     padding-top: 50px;
   }
@@ -59,57 +58,6 @@
     height: 100%;
     &.animated {
       animation: raketa 0.3s ease-out infinite;
-    }
-  }
-}
-
-.space-scene {
-  display: block;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  overflow: hidden;
-  background-size: 100% auto;
-  user-select: none;
-  pointer-events: none;
-  z-index: 0;
-  img {
-    opacity: 1;
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 2;
-    &.bg-lines {
-      // position: relative;
-      object-fit: fill;
-      @media screen and (max-width: 1023px) {
-        object-fit: cover;
-      }
-    }
-    &.meteor {
-      z-index: 1;
-      width: auto;
-      height: auto;
-      left: 0%;
-      top: 0%;
-      animation: fallingStar 10s linear infinite 0s;
-      &:first-child {
-        left: 50%;
-        animation: fallingStar 10s linear infinite 0.5s;
-      }
-    }
-    &.bg-head {
-      width: 100%;
-      height: auto;
-      object-fit: contain;
-      @media screen and (max-width: 1023px) {
-        display: none;
-      }
     }
   }
 }

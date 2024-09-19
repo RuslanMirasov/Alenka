@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="description" content="Приходи 3 октября на сайт, чтобы участвовать в акции и выиграть крутые призы!" />
     <meta name="theme-color" content="#000000" />
     <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon" />
@@ -20,6 +20,19 @@
     <title>Алёнка</title>
   </head>
   <body class="body">
+    <!--Preloader-->
+    <div class="preloader">
+      <div class="space-bg">
+        <img src="./assets/img/hero/bg_lines.svg" alt="Фоновые линии" class="bg-lines" />
+      </div>
+      <div class="preloader__rocket">
+        <div class="rocket">
+          <img src="./assets/img/hero/raketa2.png" alt="Ракета" class="animated" />
+          <img src="./assets/img/hero/raketa.png" alt="Ракета" />
+        </div>
+      </div>
+    </div>
+
     <!-- Header -->
     <header class="header">
       <div class="section-container">
@@ -76,11 +89,14 @@
     <main class="main">
       <!--Section--HERO-->
       <section class="section section--hero">
-        <div class="space-scene">
+        <div class="space-bg">
+          <div class="stars-sky"></div>
+          <div class="stars-sky"></div>
           <img src="./assets/img/hero/meteor.png" alt="Падающая звезда" class="meteor" />
           <img src="./assets/img/hero/meteor.png" alt="Падающая звезда" class="meteor" />
           <img src="./assets/img/hero/bg_lines.svg" alt="Фоновые линии" class="bg-lines" />
         </div>
+
         <div class="section-container">
           <div class="hero">
             <div class="hero__text">
@@ -134,8 +150,8 @@
         <!--RUNNING TEXT-->
         <div class="hero__runtext">
           <div class="runText" data-runtext="left">
-            <div class="runText__inner">призы&nbsp;призы&nbsp;призы&nbsp;призы&nbsp;призы&nbsp;призы&nbsp;</div>
-            <div class="runText__inner">призы&nbsp;призы&nbsp;призы&nbsp;призы&nbsp;призы&nbsp;призы&nbsp;</div>
+            <div class="runText__inner">&nbsp;призы&nbsp;призы&nbsp;призы&nbsp;призы&nbsp;призы</div>
+            <div class="runText__inner">призы&nbsp;призы&nbsp;призы&nbsp;призы&nbsp;призы&nbsp;</div>
           </div>
         </div>
 
@@ -220,10 +236,13 @@
 
       <!--Section--TEST-->
       <section class="section section--test" id="test">
-        <div class="space-scene">
+        <div class="space-bg">
+          <div class="stars-sky"></div>
+          <div class="stars-sky"></div>
           <img src="./assets/img/hero/meteor.png" alt="Падающая звезда" class="meteor" />
           <img src="./assets/img/hero/meteor.png" alt="Падающая звезда" class="meteor" />
         </div>
+
         <div class="section-container">
           <div class="test">
             <h2 class="title title--h2 scrollto--test">
@@ -314,8 +333,8 @@
         <!--RUNNING TEXT-->
         <div class="hero__runtext">
           <div class="runText" data-runtext="left">
-            <div class="runText__inner">победители&nbsp;победители&nbsp;победители&nbsp;</div>
-            <div class="runText__inner">победители&nbsp;победители&nbsp;победители&nbsp;</div>
+            <div class="runText__inner">&nbsp;победители победители</div>
+            <div class="runText__inner">победители победители&nbsp;</div>
           </div>
         </div>
         <div class="planet planet--medium cube">
@@ -326,9 +345,9 @@
       <!--Section--WINNERS-->
       <section class="section section--winners" id="winners">
         <picture class="yellow-gradient">
-          <source media="(min-width:1024px)" srcset="./assets/img/svg/bg.svg" />
-          <source media="(max-width:1023px)" srcset="./assets/img/svg/bg_mobil.svg" />
-          <img src="./assets/img/svg/bg_mobil.svg" alt="Желтый градиент" />
+          <source media="(min-width:1024px)" srcset="./assets/img/svg/winners_bg.svg" />
+          <source media="(max-width:1023px)" srcset="./assets/img/svg/winners_bg_mobil.svg" />
+          <img src="./assets/img/svg/winners_bg_mobil.svg" alt="Желтый градиент" />
         </picture>
         <div class="section-container">
           <!--Winners-->
@@ -403,6 +422,10 @@
 
     <!-- Footer -->
     <footer class="footer">
+      <div class="space-bg">
+        <div class="stars-sky"></div>
+        <div class="stars-sky"></div>
+      </div>
       <div class="section-container">
         <p>Copyright &copy; 2016-2024 Интернет-магазин кондитерских изделий «Алёнка»</p>
         <a href="https://www.alenka.ru/information/" target="_blank">Информация о Холдинге</a>
@@ -663,19 +686,113 @@
 
     <!--HISTORY-->
     <div class="history" data-js="history">
-      <div class="space-scene">
+      <div class="space-bg">
+        <div class="stars-sky"></div>
+        <div class="stars-sky"></div>
         <img src="./assets/img/hero/meteor.png" alt="Падающая звезда" class="meteor" />
         <img src="./assets/img/hero/meteor.png" alt="Падающая звезда" class="meteor" />
+        <img src="./assets/img/gif/spacebg.webp" alt="Падающая звезда" class="history-bg" />
       </div>
       <button type="button" class="button button--white" onclick="hideHistory();">Пропустить&nbsp;&nbsp;&nbsp;&#x3E;</button>
-      <button type="button" class="scroll-down">
+      <button type="button" class="scroll-down" data-js="next-scene">
         <img src="./assets/img/gif/arrow.gif" alt="Логотип Алёнка" />
       </button>
 
       <!--scens-->
-      <div class="history-scens">
-        <div>
-          <h1 class="title title--h2">Сцена <span data-js="scens-counter">1</span></h1>
+      <div class="history-scens scene--1">
+        <!--галактика магнит-->
+        <div class="history-scens__item magnit-galaxy"></div>
+
+        <!--карамельная планета-->
+        <div class="history-scens__item karamel-planet">
+          <div class="planet cube">
+            <img src="./assets/img/hero/planet_big.png" alt="Алёнка" />
+          </div>
+        </div>
+
+        <!--метеоритный дождь-->
+        <div class="history-scens__item meteorits"></div>
+
+        <!--ракета-->
+        <div class="history-scens__item history-rocket">
+          <div class="history-rocket-image">
+            <div class="rocket">
+              <img src="./assets/img/hero/raketa2.png" alt="Ракета" class="animated" />
+              <img src="./assets/img/hero/raketa.png" alt="Ракета" />
+            </div>
+          </div>
+        </div>
+
+        <!--текст-->
+        <div class="history-scens__item history-text">
+          <ul class="history-text__list">
+            <li class="history-text__item history-text__item--1">
+              <p>
+                <span>Время отправляться в космос, <br />чтобы найти новый вкус!</span>
+              </p>
+            </li>
+            <li class="history-text__item history-text__item--2">
+              <p>Метеоритный дождь! <br />Мы не сможем пройти!</p>
+            </li>
+            <li class="history-text__item history-text__item--3">
+              <p>Притяжение из галактики <span>«Магнит»</span>! <br />Мы на верном пути!</p>
+            </li>
+            <li class="history-text__item history-text__item--4">
+              <p>
+                Алёнка нашла вселенную <span>«Карамельный <br />взрыв!»</span> мммм.... <span>невероятно вкусно!</span>
+              </p>
+            </li>
+          </ul>
+        </div>
+
+        <!--дом снаружи-->
+        <div class="history-scens__item home-outside"></div>
+
+        <!--дом внутри-->
+        <div class="history-scens__item home-inside"></div>
+
+        <!--магнит лого 1-->
+        <div class="history-scens__item magnit-logo">
+          <img src="./assets/img/history/magnit.svg" alt="magnit" />
+        </div>
+
+        <!--магнит лого 2-->
+        <div class="history-scens__item magnit-logo2">
+          <img src="./assets/img/svg/magnet.svg" alt="magnit" />
+        </div>
+
+        <!--Последний слайд-->
+        <div class="history-scens__item final-slide">
+          <div class="final-slide-container">
+            <div class="final-slide__text">
+              <h2>
+                Присоединяйся! <br />
+                Покупай Алёнку <br />
+                <span>«Карамельный взрыв»</span> <br />
+                регистрируй чеки, проходи <br />
+                тест и узнай кто ты из <br />
+                карамельной вселенной!
+              </h2>
+            </div>
+            <div class="final-slide__image">
+              <div class="cube">
+                <div class="heroImageScene">
+                  <img src="./assets/img/hero/alenka.png" alt="Алёнка" class="animated" />
+                  <img src="./assets/img/hero/alenka_bg.png" alt="Алёнка" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--интро текст-->
+        <div class="history-scens__item intro-text">
+          <h2>
+            Однажды вечером, <br />
+            Алёнка мечтала <br />
+            о космосе и новых <br />
+            открытиях!
+          </h2>
         </div>
       </div>
     </div>

@@ -1,6 +1,4 @@
 const backdrop = document.querySelector('.backdrop');
-// const fixedElements = [].filter.call(document.all, e => getComputedStyle(e).position == 'fixed');
-const scrollbarWidth = window.innerWidth - document.querySelector('.main').offsetWidth;
 const popupButtons = document.querySelectorAll('[data-modal]');
 
 const addPaddingsToFixedElements = width => {
@@ -27,36 +25,18 @@ const freezeBody = () => {
     document.body.classList.add('freez');
   }
   backdrop.classList.add('active');
-
-  // modifyScrollbar();
 };
 
 const unfreezeBody = () => {
   backdrop.classList.remove('active');
   setTimeout(() => {
     checkScrollbar();
-    const nenuBackdrop = document.querySelector('[data-js="menu-backdrop"]');
-    if (nenuBackdrop && !nenuBackdrop.classList.contains('is-open')) {
+    const menuBackdrop = document.querySelector('[data-js="menu-backdrop"]');
+    if (menuBackdrop && !menuBackdrop.classList.contains('is-open')) {
       document.body.classList.remove('freez');
     }
-
-    // modifyScrollbar();
   }, 300);
 };
-
-// export const modifyScrollbar = () => {
-//   if (document.body.classList.contains('freez')) {
-//     fixedElements.forEach(fixedElement => {
-//       document.body.style.paddingRight = scrollbarWidth + 'px';
-//       fixedElement.style.paddingRight = scrollbarWidth + 'px';
-//     });
-//     return;
-//   }
-//   fixedElements.forEach(fixedElement => {
-//     document.body.style.paddingRight = '0px';
-//     fixedElement.style.paddingRight = '0px';
-//   });
-// };
 
 const handleBackdropClick = e => {
   if (e.target.classList.contains('backdrop') || e.target.classList.contains('modals') || e.target.classList.contains('modal__close')) {

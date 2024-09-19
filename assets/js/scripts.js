@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const refs = {
+    preloader: document.querySelector('.preloader'),
     scrollLinks: document.querySelectorAll('[data-scrollto]'),
     runTexts: document.querySelectorAll('[data-runtext]'),
     accordeon: document.querySelectorAll('[data-accordeon]'),
@@ -25,14 +26,20 @@ document.addEventListener('DOMContentLoaded', () => {
       slidesPerView: 'auto',
       breakpoints: {
         768: {
-          spaceBetween: 40, // Расстояние между слайдами на экранах шире 768px
-          centeredSlides: false, // Отключаем центровку
+          spaceBetween: 40,
+          centeredSlides: false,
         },
         0: {
-          spaceBetween: 26, // Расстояние между слайдами на экранах уже 768px
-          centeredSlides: true, // Включаем центровку слайдов
+          spaceBetween: 26,
+          centeredSlides: true,
         },
       },
     });
   }
+
+  window.addEventListener('load', () => {
+    if (refs.preloader) {
+      refs.preloader.classList.add('hidden');
+    }
+  });
 });

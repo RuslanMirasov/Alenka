@@ -16,7 +16,6 @@
   --menu-gradient: linear-gradient(120deg, #f4db6c, #fff8d8, #f4db6c);
   --modal-bg-radial: radial-gradient(#d3c587 0%, #f4db6c 100%);
   --modal-bg: linear-gradient(90deg, rgba(244, 219, 108, 1) 0%, rgba(255, 255, 255, 1) 50%, rgba(244, 219, 108, 1) 100%);
-  --space: linear-gradient(rgba(39, 0, 122, 0.4), rgba(39, 0, 122, 0.4)), url('../img/gif/starsBg.gif') repeat-y center top/cover;
 
   --paragmatica: 'Pragmatica regular', verdana;
   --paragmatica-bold: 'Pragmatica bold', verdana;
@@ -27,6 +26,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+//preloader
+@import './components/preloader';
 
 //Basics
 @import './basics/fonts';
@@ -47,6 +49,7 @@
 
 //Components
 @import './components/body';
+@import './components/space';
 @import './components/section';
 @import './components/header';
 @import './components/burger';
